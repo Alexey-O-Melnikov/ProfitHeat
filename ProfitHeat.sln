@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitHeat.WebUI", "ProfitH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitHeat.Tests", "ProfitHeat.Tests\ProfitHeat.Tests.csproj", "{537B2556-5554-4689-B0D8-23CA7A94388B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitHeat.Domain", "ProfitHeat.Domain\ProfitHeat.Domain.csproj", "{95C02B10-EC0F-48FB-80CF-1292FDCC6FFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{537B2556-5554-4689-B0D8-23CA7A94388B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537B2556-5554-4689-B0D8-23CA7A94388B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537B2556-5554-4689-B0D8-23CA7A94388B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C02B10-EC0F-48FB-80CF-1292FDCC6FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C02B10-EC0F-48FB-80CF-1292FDCC6FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C02B10-EC0F-48FB-80CF-1292FDCC6FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C02B10-EC0F-48FB-80CF-1292FDCC6FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
