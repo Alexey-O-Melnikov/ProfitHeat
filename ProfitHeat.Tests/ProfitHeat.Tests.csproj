@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProfitHeat.Domain\ProfitHeat.Domain.csproj">
+      <Project>{95c02b10-ec0f-48fb-80cf-1292fdcc6fff}</Project>
+      <Name>ProfitHeat.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProfitHeat.WebUI\ProfitHeat.WebUI.csproj">
       <Project>{7FABFC74-CB6C-454A-A66B-60489B8537B6}</Project>
       <Name>ProfitHeat.WebUI</Name>

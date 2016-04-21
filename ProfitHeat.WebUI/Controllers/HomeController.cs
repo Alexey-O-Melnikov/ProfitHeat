@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ProfitHeat.Domain;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,6 +13,20 @@ namespace ProfitHeat.WebUI.Controllers
     {
         public ActionResult Index()
         {
+            try
+            {
+                StoreEFContext DbContext = new StoreEFContext();
+                DbContext.Database.Initialize(false);
+            }
+            catch (Exception ex)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Debug.WriteLine("Инициализация не выполнена. Ошибка: ");
+                    Debug.WriteLine(ex.Message);
+                    Thread.Sleep(300);
+                }
+            }
             return View();
         }
 
