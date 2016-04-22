@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProfitHeat.Domain.TypeRoom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComfortableTemperature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirChange)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComfortableTemperature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirChange)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TypeRoomID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TypeRoomID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TypeRoomID })
+        </td>
+    </tr>
+}
+
+</table>

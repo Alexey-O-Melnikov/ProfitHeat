@@ -13,10 +13,11 @@ namespace ProfitHeat.WebUI.Controllers
     {
         public ActionResult Index()
         {
+            StoreEFContext DbContext = null;
             try
             {
-                StoreEFContext DbContext = new StoreEFContext();
-                DbContext.Database.Initialize(false);
+                DbContext = new StoreEFContext();
+                DbContext.Database.Initialize(true);
             }
             catch (Exception ex)
             {
@@ -27,7 +28,7 @@ namespace ProfitHeat.WebUI.Controllers
                     Thread.Sleep(300);
                 }
             }
-            return View();
+            return View(DbContext.Projects.ToList());
         }
 
         public ActionResult About()

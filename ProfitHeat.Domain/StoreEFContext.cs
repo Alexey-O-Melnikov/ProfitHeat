@@ -16,6 +16,7 @@
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Window> Windows { get; set; }
         public virtual DbSet<Cladding> Claddings { get; set; }
+        public virtual DbSet<WallLayer> WallLayers { get; set; }
         //Plot
         public virtual DbSet<Plot> Plots { get; set; }
         public virtual DbSet<Layer> Layers { get; set; }

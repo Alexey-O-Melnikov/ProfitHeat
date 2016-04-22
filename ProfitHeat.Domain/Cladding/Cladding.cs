@@ -20,7 +20,7 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// материалы
         /// </summary>
-        public List<Material> Materials { get; set; }
+        public List<WallLayer> WallLayers { get; set; }
         ///// <summary>
         ///// коэффициент уменьшения разности температур (n)
         ///// </summary>

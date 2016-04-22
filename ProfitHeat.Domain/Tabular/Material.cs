@@ -13,13 +13,8 @@ namespace ProfitHeat.Domain
         /// </summary>
         public string Title { get; set; }
         /// <summary>
-        /// толщина
-        /// </summary>
-        public double Thickness { get; set; }
-        /// <summary>
         /// коэффициент теплопроводности (λ) (Вт / (м * °С))
         /// </summary>
         public double HeatConductivityCoefficient { get; set; }
-        public List<Cladding> Claddings { get; set; }
     }
 }

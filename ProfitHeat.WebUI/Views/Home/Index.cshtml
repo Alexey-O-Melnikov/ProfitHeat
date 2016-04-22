@@ -1,31 +1,32 @@
-﻿@{
+﻿@model List<ProfitHeat.Domain.Project>
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>ProfitHeat</h1>
+    <p class="lead">Расчитайте отопительную систему выгодно для Вашего дома.</p>
+    <p><a href='@Url.Action("Index","Project")' class="btn btn-primary btn-lg">Новый проект &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    <table>
+        <thead>
+            <tr class="table-hover">
+                <th>Название проекта</th>
+                <th>Место расположения</th>
+                <th>Дата создания</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var project in Model){
+                <tr>
+                    <td>@project.Title</td>
+                    <td>@Html.DisplayFor(m => project.Location.Title)</td>
+                    <td>@project.CreateDateTime.ToString("dd MMMM, yyyyг.")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 </div>

@@ -168,8 +168,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\GlassesController.cs" />
+    <Compile Include="Controllers\Admin\LocationsController.cs" />
+    <Compile Include="Controllers\Admin\MaterialsController.cs" />
+    <Compile Include="Controllers\Admin\RadiatorsController.cs" />
+    <Compile Include="Controllers\Admin\TypeRoomsController.cs" />
+    <Compile Include="Controllers\Admin\WindowProfilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +241,37 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Materials\Create.cshtml" />
+    <Content Include="Views\Materials\Delete.cshtml" />
+    <Content Include="Views\Materials\Details.cshtml" />
+    <Content Include="Views\Materials\Edit.cshtml" />
+    <Content Include="Views\Materials\Index.cshtml" />
+    <Content Include="Views\Glasses\Create.cshtml" />
+    <Content Include="Views\Glasses\Delete.cshtml" />
+    <Content Include="Views\Glasses\Details.cshtml" />
+    <Content Include="Views\Glasses\Edit.cshtml" />
+    <Content Include="Views\Glasses\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Radiators\Create.cshtml" />
+    <Content Include="Views\Radiators\Delete.cshtml" />
+    <Content Include="Views\Radiators\Details.cshtml" />
+    <Content Include="Views\Radiators\Edit.cshtml" />
+    <Content Include="Views\Radiators\Index.cshtml" />
+    <Content Include="Views\TypeRooms\Create.cshtml" />
+    <Content Include="Views\TypeRooms\Delete.cshtml" />
+    <Content Include="Views\TypeRooms\Details.cshtml" />
+    <Content Include="Views\TypeRooms\Edit.cshtml" />
+    <Content Include="Views\TypeRooms\Index.cshtml" />
+    <Content Include="Views\WindowProfiles\Create.cshtml" />
+    <Content Include="Views\WindowProfiles\Delete.cshtml" />
+    <Content Include="Views\WindowProfiles\Details.cshtml" />
+    <Content Include="Views\WindowProfiles\Edit.cshtml" />
+    <Content Include="Views\WindowProfiles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

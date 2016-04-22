@@ -55,7 +55,9 @@
     <Compile Include="Cladding\Door.cs" />
     <Compile Include="Cladding\Floor.cs" />
     <Compile Include="Cladding\Wall.cs" />
+    <Compile Include="Cladding\WallLayer.cs" />
     <Compile Include="Cladding\Сeiling.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
     <Compile Include="Plot\Layer.cs" />
     <Compile Include="Plot\Plot.cs" />
@@ -69,7 +71,7 @@
     <Compile Include="Tabular\Radiator.cs" />
     <Compile Include="Tabular\TypeRoom.cs" />
     <Compile Include="Tabular\WindowProfile.cs" />
-    <Compile Include="Window.cs" />
+    <Compile Include="Cladding\Window.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
