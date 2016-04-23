@@ -17,6 +17,14 @@ namespace ProfitHeat.Domain
         /// </summary>
         public string Type { get; set; }
         /// <summary>
+        /// количество камер
+        /// </summary>
+        public int CountCamera { get; set; }
+        /// <summary>
+        /// pасстояние между стеклами
+        /// </summary>
+        public int DistanceBetweenGlasses { get; set; }
+        /// <summary>
         /// коэффициент теплосопротивления (R) (м² * °С / Вт)
         /// </summary>
         public double HeatResistanceCoefficient { get; set; }

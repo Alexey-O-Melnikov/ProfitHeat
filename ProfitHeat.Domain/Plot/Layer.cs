@@ -13,6 +13,6 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// ограждающие конструкции
         /// </summary>
-        public List<Item> Items { get; set; }
+        public virtual List<Item> Items { get; set; }
     }
 }

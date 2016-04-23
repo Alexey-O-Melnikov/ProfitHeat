@@ -16,6 +16,6 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// слои
         /// </summary>
-		public List<Layer> Layers { get; set; }
+		public virtual List<Layer> Layers { get; set; }
 	}
 }

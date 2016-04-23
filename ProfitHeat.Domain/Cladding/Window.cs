@@ -18,11 +18,11 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// стеклопакет
         /// </summary>
-        public Glass Glass { get; set; }
+        public virtual Glass Glass { get; set; }
         /// <summary>
         /// оконный профиль
         /// </summary>
-        public WindowProfile WindowProfile { get; set; }
+        public virtual WindowProfile WindowProfile { get; set; }
         /// <summary>
         /// площадь окна
         /// </summary>

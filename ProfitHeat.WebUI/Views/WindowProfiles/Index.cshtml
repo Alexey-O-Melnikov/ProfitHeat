@@ -12,6 +12,12 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ManufacturerWindowProfile.TitleCompany)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleMark)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CountCameras)
         </th>
         <th>
@@ -25,6 +31,12 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManufacturerWindowProfile.TitleCompany)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleMark)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CountCameras)
         </td>

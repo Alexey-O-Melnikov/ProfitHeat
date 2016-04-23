@@ -10,107 +10,107 @@ using ProfitHeat.Domain;
 
 namespace ProfitHeat.WebUI.Controllers.Admin
 {
-    public class WindowProfilesController : Controller
+    public class GlassesController : Controller
     {
         private StoreEFContext db = new StoreEFContext();
 
-        // GET: WindowProfiles
+        // GET: Glasses
         public ActionResult Index()
         {
-            return View(db.WindowsProfiles.ToList());
+            return View(db.Glases.ToList());
         }
 
-        // GET: WindowProfiles/Details/5
+        // GET: Glasses/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
-            if (windowProfile == null)
+            Glass glass = db.Glases.Find(id);
+            if (glass == null)
             {
                 return HttpNotFound();
             }
-            return View(windowProfile);
+            return View(glass);
         }
 
-        // GET: WindowProfiles/Create
+        // GET: Glasses/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: WindowProfiles/Create
+        // POST: Glasses/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "WindowProfileID,CountCameras,Thickness,HeatResistanceCoefficient")] WindowProfile windowProfile)
+        public ActionResult Create([Bind(Include = "GlassID,Type,CountCamera,DistanceBetweenGlasses,HeatResistanceCoefficient")] Glass glass)
         {
             if (ModelState.IsValid)
             {
-                db.WindowsProfiles.Add(windowProfile);
+                db.Glases.Add(glass);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(windowProfile);
+            return View(glass);
         }
 
-        // GET: WindowProfiles/Edit/5
+        // GET: Glasses/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
-            if (windowProfile == null)
+            Glass glass = db.Glases.Find(id);
+            if (glass == null)
             {
                 return HttpNotFound();
             }
-            return View(windowProfile);
+            return View(glass);
         }
 
-        // POST: WindowProfiles/Edit/5
+        // POST: Glasses/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "WindowProfileID,CountCameras,Thickness,HeatResistanceCoefficient")] WindowProfile windowProfile)
+        public ActionResult Edit([Bind(Include = "GlassID,Type,CountCamera,DistanceBetweenGlasses,HeatResistanceCoefficient")] Glass glass)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(windowProfile).State = EntityState.Modified;
+                db.Entry(glass).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(windowProfile);
+            return View(glass);
         }
 
-        // GET: WindowProfiles/Delete/5
+        // GET: Glasses/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
-            if (windowProfile == null)
+            Glass glass = db.Glases.Find(id);
+            if (glass == null)
             {
                 return HttpNotFound();
             }
-            return View(windowProfile);
+            return View(glass);
         }
 
-        // POST: WindowProfiles/Delete/5
+        // POST: Glasses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
-            db.WindowsProfiles.Remove(windowProfile);
+            Glass glass = db.Glases.Find(id);
+            db.Glases.Remove(glass);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

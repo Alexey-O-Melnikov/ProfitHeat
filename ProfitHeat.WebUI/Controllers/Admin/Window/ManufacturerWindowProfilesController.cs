@@ -8,109 +8,109 @@ using System.Web;
 using System.Web.Mvc;
 using ProfitHeat.Domain;
 
-namespace ProfitHeat.WebUI.Controllers.Admin
+namespace ProfitHeat.WebUI.Controllers.Admin.Window
 {
-    public class GlassesController : Controller
+    public class ManufacturerWindowProfilesController : Controller
     {
         private StoreEFContext db = new StoreEFContext();
 
-        // GET: Glasses
+        // GET: ManufacturerWindowProfiles
         public ActionResult Index()
         {
-            return View(db.Glases.ToList());
+            return View(db.ManufacturerWindowProfiles.ToList());
         }
 
-        // GET: Glasses/Details/5
+        // GET: ManufacturerWindowProfiles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Glass glass = db.Glases.Find(id);
-            if (glass == null)
+            ManufacturerWindowProfile manufacturerWindowProfile = db.ManufacturerWindowProfiles.Find(id);
+            if (manufacturerWindowProfile == null)
             {
                 return HttpNotFound();
             }
-            return View(glass);
+            return View(manufacturerWindowProfile);
         }
 
-        // GET: Glasses/Create
+        // GET: ManufacturerWindowProfiles/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Glasses/Create
+        // POST: ManufacturerWindowProfiles/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GlassID,Type,HeatResistanceCoefficient")] Glass glass)
+        public ActionResult Create([Bind(Include = "ManufacturerWindowProfileID,TitleCompany")] ManufacturerWindowProfile manufacturerWindowProfile)
         {
             if (ModelState.IsValid)
             {
-                db.Glases.Add(glass);
+                db.ManufacturerWindowProfiles.Add(manufacturerWindowProfile);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(glass);
+            return View(manufacturerWindowProfile);
         }
 
-        // GET: Glasses/Edit/5
+        // GET: ManufacturerWindowProfiles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Glass glass = db.Glases.Find(id);
-            if (glass == null)
+            ManufacturerWindowProfile manufacturerWindowProfile = db.ManufacturerWindowProfiles.Find(id);
+            if (manufacturerWindowProfile == null)
             {
                 return HttpNotFound();
             }
-            return View(glass);
+            return View(manufacturerWindowProfile);
         }
 
-        // POST: Glasses/Edit/5
+        // POST: ManufacturerWindowProfiles/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GlassID,Type,HeatResistanceCoefficient")] Glass glass)
+        public ActionResult Edit([Bind(Include = "ManufacturerWindowProfileID,TitleCompany")] ManufacturerWindowProfile manufacturerWindowProfile)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(glass).State = EntityState.Modified;
+                db.Entry(manufacturerWindowProfile).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(glass);
+            return View(manufacturerWindowProfile);
         }
 
-        // GET: Glasses/Delete/5
+        // GET: ManufacturerWindowProfiles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Glass glass = db.Glases.Find(id);
-            if (glass == null)
+            ManufacturerWindowProfile manufacturerWindowProfile = db.ManufacturerWindowProfiles.Find(id);
+            if (manufacturerWindowProfile == null)
             {
                 return HttpNotFound();
             }
-            return View(glass);
+            return View(manufacturerWindowProfile);
         }
 
-        // POST: Glasses/Delete/5
+        // POST: ManufacturerWindowProfiles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Glass glass = db.Glases.Find(id);
-            db.Glases.Remove(glass);
+            ManufacturerWindowProfile manufacturerWindowProfile = db.ManufacturerWindowProfiles.Find(id);
+            db.ManufacturerWindowProfiles.Remove(manufacturerWindowProfile);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

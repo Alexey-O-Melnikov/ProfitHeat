@@ -12,6 +12,15 @@ namespace ProfitHeat.Domain
     public class WindowProfile 
     {
         public int WindowProfileID { get; set; }
+        public int ManufacturerWindowProfileID { get; set; }
+        /// <summary>
+        /// марка
+        /// </summary>
+        public virtual ManufacturerWindowProfile ManufacturerWindowProfile { get; set; }
+        /// <summary>
+        /// название марки
+        /// </summary>
+        public string TitleMark { get; set; }
         /// <summary>
         /// количество камер
         /// </summary>

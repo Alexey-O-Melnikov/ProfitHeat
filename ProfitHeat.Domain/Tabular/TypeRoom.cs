@@ -13,6 +13,6 @@
         /// <summary>
         /// воздухообмен
         /// </summary>
-        public int AirChange { get; set; }
+        public int? AirChange { get; set; }
     }
 }

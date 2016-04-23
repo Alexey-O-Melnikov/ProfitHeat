@@ -1,5 +1,8 @@
 ﻿namespace ProfitHeat.Domain
 {
+    /// <summary>
+    /// слой ограждающей конструкции
+    /// </summary>
     public class WallLayer
     {
         public int WallLayerID { get; set; }
@@ -8,7 +11,7 @@
         /// <summary>
         /// материал
         /// </summary>
-        public Material Material { get; set; }
+        public virtual Material Material { get; set; }
         /// <summary>
         /// толщина
         /// </summary>

@@ -18,11 +18,11 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// тип комнаты
         /// </summary>
-        public TypeRoom TypeRoom { get; set; }
+        public virtual TypeRoom TypeRoom { get; set; }
         /// <summary>
         /// радиатор
         /// </summary>
-        public Radiator Radiator { get; set; }
+        public virtual Radiator Radiator { get; set; }
         /// <summary>
         /// название
         /// </summary>
@@ -34,11 +34,11 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// ограждающие конструкции
         /// </summary>
-        public List<Cladding> Claddings { get; set; }
-		/// <summary>
-		/// окна
-		/// </summary>
-		public List<Window> Windows { get; set; }
+        public virtual List<Cladding> Claddings { get; set; }
+        /// <summary>
+        /// окна
+        /// </summary>
+        public virtual List<Window> Windows { get; set; }
         ///// <summary>
         ///// добавочные потери теплоты (β)
         ///// </summary>

@@ -24,9 +24,11 @@
         //Tabular
         public virtual DbSet<Glass> Glases { get; set; }
         public virtual DbSet<WindowProfile> WindowsProfiles { get; set; }
+        public virtual DbSet<ManufacturerWindowProfile> ManufacturerWindowProfiles { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<Radiator> Radiators { get; set; }
         public virtual DbSet<TypeRoom> TypesRooms { get; set; }
+
     }
 }

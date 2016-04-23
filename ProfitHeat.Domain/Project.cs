@@ -18,11 +18,11 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// регион расположения
         /// </summary>
-		public Location Location { get; set; }
+		public virtual Location Location { get; set; }
         /// <summary>
         /// чертеж - схема
         /// </summary>
-		public Plot Plot { get; set; }
+		public virtual Plot Plot { get; set; }
         /// <summary>
         /// название проекта
         /// </summary>
@@ -34,6 +34,6 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// комнаты
         /// </summary>
-		public List<Room> Rooms { get; set; }
+		public virtual List<Room> Rooms { get; set; }
 	}
 }

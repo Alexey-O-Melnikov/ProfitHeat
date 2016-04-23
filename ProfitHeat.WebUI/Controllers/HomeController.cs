@@ -17,7 +17,7 @@ namespace ProfitHeat.WebUI.Controllers
             try
             {
                 DbContext = new StoreEFContext();
-                DbContext.Database.Initialize(true);
+                DbContext.Database.Initialize(false);
             }
             catch (Exception ex)
             {

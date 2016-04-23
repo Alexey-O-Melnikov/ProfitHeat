@@ -8,109 +8,114 @@ using System.Web;
 using System.Web.Mvc;
 using ProfitHeat.Domain;
 
-namespace ProfitHeat.WebUI.Controllers.Admin
+namespace ProfitHeat.WebUI.Controllers.Admin.Window
 {
-    public class MaterialsController : Controller
+    public class WindowProfilesController : Controller
     {
         private StoreEFContext db = new StoreEFContext();
 
-        // GET: Materials
+        // GET: WindowProfiles
         public ActionResult Index()
         {
-            return View(db.Materials.ToList());
+            var windowsProfiles = db.WindowsProfiles.Include(w => w.ManufacturerWindowProfile);
+            return View(windowsProfiles.ToList());
         }
 
-        // GET: Materials/Details/5
+        // GET: WindowProfiles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Material material = db.Materials.Find(id);
-            if (material == null)
+            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
+            if (windowProfile == null)
             {
                 return HttpNotFound();
             }
-            return View(material);
+            return View(windowProfile);
         }
 
-        // GET: Materials/Create
+        // GET: WindowProfiles/Create
         public ActionResult Create()
         {
+            ViewBag.ManufacturerWindowProfileID = new SelectList(db.ManufacturerWindowProfiles, "ManufacturerWindowProfileID", "TitleCompany");
             return View();
         }
 
-        // POST: Materials/Create
+        // POST: WindowProfiles/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaterialID,Title,HeatConductivityCoefficient")] Material material)
+        public ActionResult Create([Bind(Include = "WindowProfileID,ManufacturerWindowProfileID,TitleMark,CountCameras,Thickness,HeatResistanceCoefficient")] WindowProfile windowProfile)
         {
             if (ModelState.IsValid)
             {
-                db.Materials.Add(material);
+                db.WindowsProfiles.Add(windowProfile);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(material);
+            ViewBag.ManufacturerWindowProfileID = new SelectList(db.ManufacturerWindowProfiles, "ManufacturerWindowProfileID", "TitleCompany", windowProfile.ManufacturerWindowProfileID);
+            return View(windowProfile);
         }
 
-        // GET: Materials/Edit/5
+        // GET: WindowProfiles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Material material = db.Materials.Find(id);
-            if (material == null)
+            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
+            if (windowProfile == null)
             {
                 return HttpNotFound();
             }
-            return View(material);
+            ViewBag.ManufacturerWindowProfileID = new SelectList(db.ManufacturerWindowProfiles, "ManufacturerWindowProfileID", "TitleCompany", windowProfile.ManufacturerWindowProfileID);
+            return View(windowProfile);
         }
 
-        // POST: Materials/Edit/5
+        // POST: WindowProfiles/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaterialID,Title,HeatConductivityCoefficient")] Material material)
+        public ActionResult Edit([Bind(Include = "WindowProfileID,ManufacturerWindowProfileID,TitleMark,CountCameras,Thickness,HeatResistanceCoefficient")] WindowProfile windowProfile)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(material).State = EntityState.Modified;
+                db.Entry(windowProfile).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(material);
+            ViewBag.ManufacturerWindowProfileID = new SelectList(db.ManufacturerWindowProfiles, "ManufacturerWindowProfileID", "TitleCompany", windowProfile.ManufacturerWindowProfileID);
+            return View(windowProfile);
         }
 
-        // GET: Materials/Delete/5
+        // GET: WindowProfiles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Material material = db.Materials.Find(id);
-            if (material == null)
+            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
+            if (windowProfile == null)
             {
                 return HttpNotFound();
             }
-            return View(material);
+            return View(windowProfile);
         }
 
-        // POST: Materials/Delete/5
+        // POST: WindowProfiles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Material material = db.Materials.Find(id);
-            db.Materials.Remove(material);
+            WindowProfile windowProfile = db.WindowsProfiles.Find(id);
+            db.WindowsProfiles.Remove(windowProfile);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
