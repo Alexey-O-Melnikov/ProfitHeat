@@ -1,0 +1,80 @@
+﻿@model ProfitHeat.Domain.Project
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+
+<section id="initialData" class="left">
+    <div id="mainLocation">
+        <input type="text" list="location" autocomplete="on">
+        <datalist id="location">
+            <option>Липецк</option>
+        </datalist>
+        <select id="level">
+            <option value="value">Этаж</option>
+        </select>
+    </div>
+    <div id="room">
+        <div id="mainRoom">
+            <label>Название комнаты</label>
+            <select id="RoomType">
+                <option value="value">Тип комнаты</option>
+            </select>
+            <select id="RadiatorMaterial">
+                <option value="value">Тип радиатора</option>
+            </select>
+        </div>
+        <select id="wall">
+            <option value="value">Внешняя стена</option>
+            <option></option>
+
+        </select>
+        <select id="ceiling">
+            <option value="value">Потолок</option>
+        </select>
+        <select id="floor">
+            <option value="value">Полы</option>
+        </select>
+        <select id="doors">
+            <option value="value">Двери</option>
+        </select>
+        <select id="windows">
+            <option value="value">Окна</option>
+        </select>
+    </div>
+</section>
+
+<section id="plot" class="top">
+    <div id="buttonsForDrawing">
+        <div id="inWallPlot" class="btn">
+            <img src="#" alt="Внешняя стена" />
+        </div>
+        <div id="outWallPlot" class="btn">
+            <img src="#" alt="Внутренняя стена" />
+        </div>
+        <div id="windowPlot" class="btn">
+            <img src="#" alt="Окно" />
+        </div>
+        <div id="doorPlot" class="btn">
+            <img src="#" alt="Дверь" />
+        </div>
+    </div>
+    <div>
+        <canvas id="canvas">
+            Браузер не поддерживает canvas
+        </canvas>
+    </div>
+</section>
+
+<section id="result" class="right">
+    <label>Мощность котла</label>
+    <label>Диаметр теплоносителя</label>
+    <table>
+        <thead>
+            <tr><td>Название комнаты</td><td>Количество секций</td></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>

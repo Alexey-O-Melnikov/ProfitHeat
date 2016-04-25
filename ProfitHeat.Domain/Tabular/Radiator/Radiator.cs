@@ -12,17 +12,23 @@ namespace ProfitHeat.Domain
     public class Radiator
     {
         public int RadiatorID { get; set; }
+        public int ManufacturerRadiatorID { get; set; }
+        public int MaterialRadiatorID { get; set; }
         /// <summary>
-        /// тип радиатора
+        /// компания производитель радиаторов
         /// </summary>
-        public string RadiatorType { get; set; }
+        public virtual ManufacturerRadiator ManufacturerRadiator { get; set; }
         /// <summary>
         /// материал радиатора
         /// </summary>
-        public string Material { get; set; }
+        public virtual MaterialRadiator Material { get; set; }
+        /// <summary>
+        /// название модели
+        /// </summary>
+        public string TitleModel { get; set; }
         /// <summary>
         /// мощность одной секции
         /// </summary>
-        public int PowerSection { get; set; }
+        public int ThermalPower { get; set; }
     }
 }

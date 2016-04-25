@@ -28,6 +28,8 @@
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<Radiator> Radiators { get; set; }
+        public virtual DbSet<ManufacturerRadiator> ManufacturerRadiators { get; set; }
+        public virtual DbSet<MaterialRadiator> MaterialRadiators { get; set; }
         public virtual DbSet<TypeRoom> TypesRooms { get; set; }
 
     }

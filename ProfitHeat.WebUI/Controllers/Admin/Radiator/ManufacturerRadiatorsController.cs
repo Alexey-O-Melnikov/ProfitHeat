@@ -10,107 +10,107 @@ using ProfitHeat.Domain;
 
 namespace ProfitHeat.WebUI.Controllers.Admin
 {
-    public class TypeRoomsController : Controller
+    public class ManufacturerRadiatorsController : Controller
     {
         private StoreEFContext db = new StoreEFContext();
 
-        // GET: TypeRooms
+        // GET: ManufacturerRadiators
         public ActionResult Index()
         {
-            return View(db.TypesRooms.ToList());
+            return View(db.ManufacturerRadiators.ToList());
         }
 
-        // GET: TypeRooms/Details/5
+        // GET: ManufacturerRadiators/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TypeRoom typeRoom = db.TypesRooms.Find(id);
-            if (typeRoom == null)
+            ManufacturerRadiator manufacturerRadiator = db.ManufacturerRadiators.Find(id);
+            if (manufacturerRadiator == null)
             {
                 return HttpNotFound();
             }
-            return View(typeRoom);
+            return View(manufacturerRadiator);
         }
 
-        // GET: TypeRooms/Create
+        // GET: ManufacturerRadiators/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: TypeRooms/Create
+        // POST: ManufacturerRadiators/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TypeRoomID,TitleTypeRoom,ComfortableTemperature,AirChange")] TypeRoom typeRoom)
+        public ActionResult Create([Bind(Include = "ManufacturerRadiatorID,TitleCompany")] ManufacturerRadiator manufacturerRadiator)
         {
             if (ModelState.IsValid)
             {
-                db.TypesRooms.Add(typeRoom);
+                db.ManufacturerRadiators.Add(manufacturerRadiator);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(typeRoom);
+            return View(manufacturerRadiator);
         }
 
-        // GET: TypeRooms/Edit/5
+        // GET: ManufacturerRadiators/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TypeRoom typeRoom = db.TypesRooms.Find(id);
-            if (typeRoom == null)
+            ManufacturerRadiator manufacturerRadiator = db.ManufacturerRadiators.Find(id);
+            if (manufacturerRadiator == null)
             {
                 return HttpNotFound();
             }
-            return View(typeRoom);
+            return View(manufacturerRadiator);
         }
 
-        // POST: TypeRooms/Edit/5
+        // POST: ManufacturerRadiators/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TypeRoomID,TitleTypeRoom,ComfortableTemperature,AirChange")] TypeRoom typeRoom)
+        public ActionResult Edit([Bind(Include = "ManufacturerRadiatorID,TitleCompany")] ManufacturerRadiator manufacturerRadiator)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(typeRoom).State = EntityState.Modified;
+                db.Entry(manufacturerRadiator).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(typeRoom);
+            return View(manufacturerRadiator);
         }
 
-        // GET: TypeRooms/Delete/5
+        // GET: ManufacturerRadiators/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TypeRoom typeRoom = db.TypesRooms.Find(id);
-            if (typeRoom == null)
+            ManufacturerRadiator manufacturerRadiator = db.ManufacturerRadiators.Find(id);
+            if (manufacturerRadiator == null)
             {
                 return HttpNotFound();
             }
-            return View(typeRoom);
+            return View(manufacturerRadiator);
         }
 
-        // POST: TypeRooms/Delete/5
+        // POST: ManufacturerRadiators/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TypeRoom typeRoom = db.TypesRooms.Find(id);
-            db.TypesRooms.Remove(typeRoom);
+            ManufacturerRadiator manufacturerRadiator = db.ManufacturerRadiators.Find(id);
+            db.ManufacturerRadiators.Remove(manufacturerRadiator);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

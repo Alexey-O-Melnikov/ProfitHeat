@@ -7,6 +7,10 @@
     {
         public int TypeRoomID { get; set; }
         /// <summary>
+        /// наименование типа комнаты
+        /// </summary>
+        public string TitleTypeRoom { get; set; }
+        /// <summary>
         /// комфортная температура
         /// </summary>
         public int ComfortableTemperature { get; set; }

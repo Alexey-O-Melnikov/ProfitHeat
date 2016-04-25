@@ -1,0 +1,26 @@
+﻿@model ProfitHeat.Domain.MaterialRadiator
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MaterialRadiator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleMaterialRadiator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleMaterialRadiator)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialRadiatorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

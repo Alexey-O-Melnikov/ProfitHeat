@@ -85,6 +85,18 @@
     <Compile Include="Migrations\201604231427150_EditProfileWindow.Designer.cs">
       <DependentUpon>201604231427150_EditProfileWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604251345340_ManufacturerRadiator.cs" />
+    <Compile Include="Migrations\201604251345340_ManufacturerRadiator.Designer.cs">
+      <DependentUpon>201604251345340_ManufacturerRadiator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604251404538_AddedMaterialRadiator.cs" />
+    <Compile Include="Migrations\201604251404538_AddedMaterialRadiator.Designer.cs">
+      <DependentUpon>201604251404538_AddedMaterialRadiator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604251458245_AddedTitleTypeRoom.cs" />
+    <Compile Include="Migrations\201604251458245_AddedTitleTypeRoom.Designer.cs">
+      <DependentUpon>201604251458245_AddedTitleTypeRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
     <Compile Include="Plot\Layer.cs" />
@@ -93,11 +105,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="StoreEFContext.cs" />
+    <Compile Include="Tabular\Radiator\ManufacturerRadiator.cs" />
+    <Compile Include="Tabular\Radiator\MaterialRadiator.cs" />
     <Compile Include="Tabular\Window\Glass.cs" />
     <Compile Include="Tabular\Location.cs" />
     <Compile Include="Tabular\Window\ManufacturerWindowProfile.cs" />
     <Compile Include="Tabular\Material.cs" />
-    <Compile Include="Tabular\Radiator.cs" />
+    <Compile Include="Tabular\Radiator\Radiator.cs" />
     <Compile Include="Tabular\TypeRoom.cs" />
     <Compile Include="Tabular\Window\WindowProfile.cs" />
     <Compile Include="Cladding\Window.cs" />
@@ -127,6 +141,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604231427150_EditProfileWindow.resx">
       <DependentUpon>201604231427150_EditProfileWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604251345340_ManufacturerRadiator.resx">
+      <DependentUpon>201604251345340_ManufacturerRadiator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604251404538_AddedMaterialRadiator.resx">
+      <DependentUpon>201604251404538_AddedMaterialRadiator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604251458245_AddedTitleTypeRoom.resx">
+      <DependentUpon>201604251458245_AddedTitleTypeRoom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

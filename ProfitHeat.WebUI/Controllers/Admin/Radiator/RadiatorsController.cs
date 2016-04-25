@@ -17,7 +17,8 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         // GET: Radiators
         public ActionResult Index()
         {
-            return View(db.Radiators.ToList());
+            var radiators = db.Radiators.Include(r => r.ManufacturerRadiator).Include(r => r.Material);
+            return View(radiators.ToList());
         }
 
         // GET: Radiators/Details/5
@@ -38,6 +39,8 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         // GET: Radiators/Create
         public ActionResult Create()
         {
+            ViewBag.ManufacturerRadiatorID = new SelectList(db.ManufacturerRadiators, "ManufacturerRadiatorID", "TitleCompany");
+            ViewBag.MaterialRadiatorID = new SelectList(db.MaterialRadiators, "MaterialRadiatorID", "TitleMaterialRadiator");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RadiatorID,RadiatorType,Material,PowerSection")] Radiator radiator)
+        public ActionResult Create([Bind(Include = "RadiatorID,ManufacturerRadiatorID,MaterialRadiatorID,TitleModel,ThermalPower")] Radiator radiator)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace ProfitHeat.WebUI.Controllers.Admin
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ManufacturerRadiatorID = new SelectList(db.ManufacturerRadiators, "ManufacturerRadiatorID", "TitleCompany", radiator.ManufacturerRadiatorID);
+            ViewBag.MaterialRadiatorID = new SelectList(db.MaterialRadiators, "MaterialRadiatorID", "TitleMaterialRadiator", radiator.MaterialRadiatorID);
             return View(radiator);
         }
 
@@ -70,6 +75,8 @@ namespace ProfitHeat.WebUI.Controllers.Admin
             {
                 return HttpNotFound();
             }
+            ViewBag.ManufacturerRadiatorID = new SelectList(db.ManufacturerRadiators, "ManufacturerRadiatorID", "TitleCompany", radiator.ManufacturerRadiatorID);
+            ViewBag.MaterialRadiatorID = new SelectList(db.MaterialRadiators, "MaterialRadiatorID", "TitleMaterialRadiator", radiator.MaterialRadiatorID);
             return View(radiator);
         }
 
@@ -78,7 +85,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RadiatorID,RadiatorType,Material,PowerSection")] Radiator radiator)
+        public ActionResult Edit([Bind(Include = "RadiatorID,ManufacturerRadiatorID,MaterialRadiatorID,TitleModel,ThermalPower")] Radiator radiator)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace ProfitHeat.WebUI.Controllers.Admin
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ManufacturerRadiatorID = new SelectList(db.ManufacturerRadiators, "ManufacturerRadiatorID", "TitleCompany", radiator.ManufacturerRadiatorID);
+            ViewBag.MaterialRadiatorID = new SelectList(db.MaterialRadiators, "MaterialRadiatorID", "TitleMaterialRadiator", radiator.MaterialRadiatorID);
             return View(radiator);
         }
 

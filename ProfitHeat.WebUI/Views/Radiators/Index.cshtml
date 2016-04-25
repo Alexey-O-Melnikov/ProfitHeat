@@ -12,13 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.RadiatorType)
+            @Html.DisplayNameFor(model => model.ManufacturerRadiator.TitleCompany)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Material)
+            @Html.DisplayNameFor(model => model.Material.TitleMaterialRadiator)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PowerSection)
+            @Html.DisplayNameFor(model => model.TitleModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThermalPower)
         </th>
         <th></th>
     </tr>
@@ -26,13 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.RadiatorType)
+            @Html.DisplayFor(modelItem => item.ManufacturerRadiator.TitleCompany)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Material)
+            @Html.DisplayFor(modelItem => item.Material.TitleMaterialRadiator)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PowerSection)
+            @Html.DisplayFor(modelItem => item.TitleModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThermalPower)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.RadiatorID }) |
