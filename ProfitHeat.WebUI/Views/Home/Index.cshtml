@@ -10,23 +10,33 @@
 </div>
 
 <div class="row">
-    <table>
-        <thead>
-            <tr class="table-hover">
-                <th>Название проекта</th>
-                <th>Место расположения</th>
-                <th>Дата создания</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var project in Model){
-                <tr>
-                    <td>@project.Title</td>
-                    <td>@Html.DisplayFor(m => project.Location.Title)</td>
-                    <td>@project.CreateDateTime.ToString("dd MMMM, yyyyг.")</td>
+    @*<table>
+            <thead>
+                <tr class="table-hover">
+                    <th>Название проекта</th>
+                    <th>Место расположения</th>
+                    <th>Дата создания</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var project in Model){
+                    <tr>
+                        <td>@project.Title</td>
+                        <td>@Html.DisplayFor(m => project.Location.Title)</td>
+                        <td>@project.CreateDateTime.ToString("dd MMMM, yyyyг.")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>*@
+    @foreach (var project in Model)
+    {
+        <p>
+            @Html.ActionLink(
+              project.Title + " - " +
+              project.Location.Title + " - " +
+              project.CreateDateTime.ToString("dd MMMM, yyyyг."),
+              "Index", "Project", new { id = project.ProjectID }, null)
+        </p>
+    }
 
 </div>

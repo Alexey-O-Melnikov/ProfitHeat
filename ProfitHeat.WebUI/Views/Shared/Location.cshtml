@@ -1,0 +1,9 @@
+﻿@model List<ProfitHeat.Domain.Location>
+
+<input type="text" list="location" autocomplete="on">
+<datalist id="location">
+    @foreach (var l in Model)
+    {
+        <option>@l.Title</option>
+    }
+</datalist>

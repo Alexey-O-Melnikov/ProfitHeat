@@ -1,17 +1,14 @@
 ﻿@model ProfitHeat.Domain.Project
 
 @{
-    ViewBag.Title = Model.Title;
+    ViewBag.Title = Model?.Title ?? "New";
 }
 
-<h2>@Model.Title</h2>
+<h2>@ViewBag.Title</h2>
 
 <section id="initialData" class="left">
     <div id="mainLocation">
-        <input type="text" list="location" autocomplete="on">
-        <datalist id="location">
-            <option>Липецк</option>
-        </datalist>
+        @*@Html.Partial("Location",)///////////////////////////////////////////////////////////////////////*@
         <select id="level">
             <option value="value">Этаж</option>
         </select>
