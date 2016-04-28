@@ -1,5 +1,4 @@
 ﻿@model ProfitHeat.Domain.Project
-
 @{
     ViewBag.Title = Model?.Title ?? "New";
 }
@@ -8,10 +7,8 @@
 
 <section id="initialData" class="left">
     <div id="mainLocation">
-        @*@Html.Partial("Location",)///////////////////////////////////////////////////////////////////////*@
-        <select id="level">
-            <option value="value">Этаж</option>
-        </select>
+        @{ Html.RenderAction("_Location", new { locationId = Model.LocationID });}
+
     </div>
     <div id="room">
         <div id="mainRoom">

@@ -12,12 +12,35 @@ namespace ProfitHeat.WebUI.Controllers
         // GET: Project
         public ActionResult Index(int? id)
         {
-            StoreEFContext DbContext = new StoreEFContext();
-            if (id == null)
-                return View();
-            Project project = DbContext.Projects.Find(id);
-            return View(project);
+            using (StoreEFContext DbContext = new StoreEFContext())
+            {
+                if (id == null)
+                    return View();
+                var project = DbContext.Projects.Find(id);
+                return View(project);
+            }
         }
 
+        public PartialViewResult _Location(int locationId)
+        {
+            using (StoreEFContext db = new StoreEFContext())
+            {
+                ViewBag.Location = db.Locations.Find(locationId);
+                var locations = db.Locations.ToList();
+
+                return PartialView(locations);
+            }
+        }
+
+        public PartialViewResult _Materials(int materialID)
+        {
+            using (StoreEFContext db = new StoreEFContext())
+            {
+                ViewBag.Material = db.Materials.Find(materialID);
+                var materials = db.Materials.ToList();
+
+                return PartialView(materials);
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace ProfitHeat.Domain
     /// <summary>
     /// регион расположения
     /// </summary>
-    public partial class Location
+    public class Location
     {
         public int LocationID { get; set; }
         /// <summary>

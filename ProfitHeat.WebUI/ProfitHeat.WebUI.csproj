@@ -304,12 +304,12 @@
     <Content Include="Views\TypeRooms\Edit.cshtml" />
     <Content Include="Views\TypeRooms\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Project\New.cshtml" />
-    <Content Include="Views\Shared\Location.cshtml" />
-    <Content Include="Views\Shared\Materials.cshtml" />
+    <Content Include="Views\Project\_Location.cshtml" />
+    <Content Include="Views\Project\_Materials.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
