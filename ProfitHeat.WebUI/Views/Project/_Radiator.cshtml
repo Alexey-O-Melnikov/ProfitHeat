@@ -1,0 +1,20 @@
+﻿@model ProfitHeat.Domain.Radiator
+
+<label for="radiator">Радиатор</label>
+<ul>
+    <li>
+        @{
+            Html.RenderAction("_MaterialRadiators", new { materialRadiatorID = Model.MaterialRadiatorID });
+        }
+    </li>
+    <li>
+        @{
+            Html.RenderAction("_ManufacturerRadiators", new { manufacturerRadiatorID = Model.ManufacturerRadiatorID });
+        }
+    </li>
+    <li>
+        @{
+
+        }
+    </li>
+</ul>

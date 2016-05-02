@@ -185,6 +185,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InitRooms.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -304,8 +305,17 @@
     <Content Include="Views\TypeRooms\Edit.cshtml" />
     <Content Include="Views\TypeRooms\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Project\_Location.cshtml" />
+    <Content Include="Views\Project\_Locations.cshtml" />
     <Content Include="Views\Project\_Materials.cshtml" />
+    <Content Include="Views\Project\_Room.cshtml" />
+    <Content Include="Views\Project\_TypeRooms.cshtml" />
+    <Content Include="Views\Project\_Radiator.cshtml" />
+    <Content Include="Views\Project\_Window.cshtml" />
+    <Content Include="Views\Project\_Glasses.cshtml" />
+    <Content Include="Views\Project\_WindowProfiles.cshtml" />
+    <Content Include="Views\Project\_ManufacturerWindowProfiles.cshtml" />
+    <Content Include="Views\Project\_Cladding.cshtml" />
+    <Content Include="Views\Project\_WallLayer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

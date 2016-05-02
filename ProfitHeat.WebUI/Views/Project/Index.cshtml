@@ -7,36 +7,17 @@
 
 <section id="initialData" class="left">
     <div id="mainLocation">
-        @{ Html.RenderAction("_Location", new { locationId = Model.LocationID });}
+        @{
+            Html.RenderAction("_Locations", new { locationID = Model.LocationID });
+        }
+    </div>
+    <div id="level">
 
     </div>
     <div id="room">
-        <div id="mainRoom">
-            <label>Название комнаты</label>
-            <select id="RoomType">
-                <option value="value">Тип комнаты</option>
-            </select>
-            <select id="RadiatorMaterial">
-                <option value="value">Тип радиатора</option>
-            </select>
-        </div>
-        <select id="wall">
-            <option value="value">Внешняя стена</option>
-            <option></option>
-
-        </select>
-        <select id="ceiling">
-            <option value="value">Потолок</option>
-        </select>
-        <select id="floor">
-            <option value="value">Полы</option>
-        </select>
-        <select id="doors">
-            <option value="value">Двери</option>
-        </select>
-        <select id="windows">
-            <option value="value">Окна</option>
-        </select>
+        @{
+            Html.RenderAction("_Room", new { roomID = 3 });
+        }
     </div>
 </section>
 

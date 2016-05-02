@@ -1,9 +1,14 @@
 ﻿@model List<ProfitHeat.Domain.Material>
 
-<label for="materials">Материал</label>
-<select id="materials">
-    @foreach (var m in Model)
-    {
-        <option>@m.Title</option>
-    }
-</select>
+<div class="form-group">
+    <label for="materials" class="control-label col-md-2">Материал</label>
+    <div class="col-md-10">
+        <input type="text" list="materials" class="form-control" value="" />
+        <select id="materials">
+            @foreach (var m in Model)
+            {
+                <option>@m.Title</option>
+            }
+        </select>
+    </div>
+</div>

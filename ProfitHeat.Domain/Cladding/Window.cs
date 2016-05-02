@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +28,12 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// площадь окна
         /// </summary>
+        [DisplayName("Площадь окна")]
         public double WindowArea { get; set; }
         /// <summary>
         /// площадь стеклопакета
         /// </summary>
+        [DisplayName("Площадь стеклопакета")]
         public double GlassArea { get; set; }
     }
 }

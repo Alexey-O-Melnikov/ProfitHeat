@@ -1,0 +1,14 @@
+﻿@model List<ProfitHeat.Domain.Glass>
+
+<div class="form-group">
+    <label for="glasses" class="control-label col-md-2">Стеклопакет</label>
+    <div class="col-md-10">
+        <input type="text" list="glasses" name="glasses" class="form-control" value="@ViewBag.Glass" />
+        <datalist id="glasses">
+            @foreach (var item in Model)
+            {
+                <option>@item.Type</option>
+            }
+        </datalist>
+    </div>
+</div>

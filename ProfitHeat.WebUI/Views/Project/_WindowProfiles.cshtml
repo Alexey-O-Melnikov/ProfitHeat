@@ -1,0 +1,17 @@
+﻿@model List<ProfitHeat.Domain.WindowProfile>
+
+@{
+    Html.RenderPartial("_ManufacturerWindowProfiles", new { manufacturerWindowProfileID = Model.});
+}
+<div class="form-group">
+    <label for="windowProfiles" class="control-label col-md-2">Модель профиля</label>
+    <div class="col-md-10">
+        <input type="text" class="form-control" list="windowProfiles" value="@ViewBag.WindowProfile" />
+        <datalist id="windowProfiles">
+            @foreach (var item in Model)
+            {
+                <option>@item.TitleMark</option>
+            }
+        </datalist>
+    </div>
+</div>

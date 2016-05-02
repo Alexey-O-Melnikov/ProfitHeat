@@ -14,7 +14,7 @@ namespace ProfitHeat.Domain
         public int WindowProfileID { get; set; }
         public int ManufacturerWindowProfileID { get; set; }
         /// <summary>
-        /// марка
+        /// компания производитель
         /// </summary>
         public virtual ManufacturerWindowProfile ManufacturerWindowProfile { get; set; }
         /// <summary>

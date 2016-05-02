@@ -1,0 +1,13 @@
+﻿@model List<ProfitHeat.Domain.Location>
+<div class="form-group">
+    <label for="locations" class="control-label col-md-2">Город:</label>
+    <div class="col-md-10">
+        <input type="text" list="locations" class="form-control" value="@ViewBag.Location.Title">
+        <datalist id="locations">
+            @foreach (var m in Model)
+            {
+                <option>@m.Title</option>
+            }
+        </datalist>
+    </div>
+</div>

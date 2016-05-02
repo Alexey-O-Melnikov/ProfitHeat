@@ -1,9 +1,0 @@
-﻿@model List<ProfitHeat.Domain.Location>
-<label for="location">Город:</label>
-<input type="text" list="location" autocomplete="on" value="@ViewBag.Location.Title" >
-<datalist id="location">
-    @foreach (var l in Model)
-    {
-        <option>@l.Title</option>
-    }
-</datalist>

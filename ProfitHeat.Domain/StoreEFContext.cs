@@ -22,7 +22,7 @@
         public virtual DbSet<Layer> Layers { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         //Tabular
-        public virtual DbSet<Glass> Glases { get; set; }
+        public virtual DbSet<Glass> Glasses { get; set; }
         public virtual DbSet<WindowProfile> WindowsProfiles { get; set; }
         public virtual DbSet<ManufacturerWindowProfile> ManufacturerWindowProfiles { get; set; }
         public virtual DbSet<Location> Locations { get; set; }

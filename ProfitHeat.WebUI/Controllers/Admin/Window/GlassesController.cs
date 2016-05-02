@@ -17,7 +17,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         // GET: Glasses
         public ActionResult Index()
         {
-            return View(db.Glases.ToList());
+            return View(db.Glasses.ToList());
         }
 
         // GET: Glasses/Details/5
@@ -27,7 +27,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Glass glass = db.Glases.Find(id);
+            Glass glass = db.Glasses.Find(id);
             if (glass == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         {
             if (ModelState.IsValid)
             {
-                db.Glases.Add(glass);
+                db.Glasses.Add(glass);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Glass glass = db.Glases.Find(id);
+            Glass glass = db.Glasses.Find(id);
             if (glass == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Glass glass = db.Glases.Find(id);
+            Glass glass = db.Glasses.Find(id);
             if (glass == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace ProfitHeat.WebUI.Controllers.Admin
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Glass glass = db.Glases.Find(id);
-            db.Glases.Remove(glass);
+            Glass glass = db.Glasses.Find(id);
+            db.Glasses.Remove(glass);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
