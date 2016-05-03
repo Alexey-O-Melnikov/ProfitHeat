@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,12 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// название модели
         /// </summary>
+        [DisplayName("Модель")]
         public string TitleModel { get; set; }
         /// <summary>
         /// мощность одной секции
         /// </summary>
+        [DisplayName("Мощность одной секции")]
         public int ThermalPower { get; set; }
     }
 }

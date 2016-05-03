@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// площадь
         /// </summary>
+        [DisplayName("Площадь")]
         public double Area { get; set; }
         /// <summary>
         /// материалы

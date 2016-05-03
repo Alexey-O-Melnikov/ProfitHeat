@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace ProfitHeat.Domain
 {
@@ -11,6 +12,7 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// название материала
         /// </summary>
+        [DisplayName("Материал")]
         public string Title { get; set; }
         /// <summary>
         /// коэффициент теплопроводности (λ) (Вт / (м * °С))

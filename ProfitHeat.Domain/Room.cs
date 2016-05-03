@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,12 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// название
         /// </summary>
+        [DisplayName("Название комнаты")]
         public string Title { get; set; }
         /// <summary>
         /// этаж
         /// </summary>
+        [DisplayName("Этаж")]
         public int Level { get; set; }
         /// <summary>
         /// ограждающие конструкции

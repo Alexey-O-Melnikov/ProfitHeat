@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace ProfitHeat.Domain
 {
@@ -12,6 +13,7 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// название
         /// </summary>
+        [DisplayName("Город")]
         public string Title { get; set; }
         /// <summary>
         /// минимальная температура за 5 дней

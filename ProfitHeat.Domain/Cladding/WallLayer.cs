@@ -1,4 +1,6 @@
-﻿namespace ProfitHeat.Domain
+﻿using System.ComponentModel;
+
+namespace ProfitHeat.Domain
 {
     /// <summary>
     /// слой ограждающей конструкции
@@ -15,6 +17,7 @@
         /// <summary>
         /// толщина
         /// </summary>
+        [DisplayName("Толщина слоя")]
         public double Thickness { get; set; }
     }
 }

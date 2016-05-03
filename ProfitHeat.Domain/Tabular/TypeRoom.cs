@@ -1,4 +1,6 @@
-﻿namespace ProfitHeat.Domain
+﻿using System.ComponentModel;
+
+namespace ProfitHeat.Domain
 {
     /// <summary>
     /// тип комнаты
@@ -9,6 +11,7 @@
         /// <summary>
         /// наименование типа комнаты
         /// </summary>
+        [DisplayName("Тип комнаты")]
         public string TitleTypeRoom { get; set; }
         /// <summary>
         /// комфортная температура

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -26,10 +27,12 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// название проекта
         /// </summary>
+        [DisplayName("Название проекта")]
         public string Title { get; set; }
         /// <summary>
         /// дата/время создания
         /// </summary>
+        [DisplayName("Дата создания")]
         public DateTime CreateDateTime { get; set; }
         /// <summary>
         /// комнаты

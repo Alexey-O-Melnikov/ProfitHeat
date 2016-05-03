@@ -1,4 +1,6 @@
-﻿namespace ProfitHeat.Domain
+﻿using System.ComponentModel;
+
+namespace ProfitHeat.Domain
 {       
     /// <summary>
     /// производитель
@@ -9,6 +11,7 @@
         /// <summary>
         /// название компании
         /// </summary>
+        [DisplayName("Производитель")]
         public string TitleCompany { get; set; }
     }
 }

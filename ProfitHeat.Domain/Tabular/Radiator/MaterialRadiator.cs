@@ -1,4 +1,6 @@
-﻿namespace ProfitHeat.Domain
+﻿using System.ComponentModel;
+
+namespace ProfitHeat.Domain
 {
     /// <summary>
     /// материал радиатора
@@ -9,6 +11,7 @@
         /// <summary>
         /// название материала радиатора
         /// </summary>
+        [DisplayName("Материал радиатора")]
         public string TitleMaterialRadiator { get; set; }
     }
 }
