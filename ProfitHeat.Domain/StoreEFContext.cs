@@ -9,7 +9,7 @@
         public StoreEFContext()
             : base("name=StoreEFContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<StoreEFContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<StoreEFContext>());
         }
 
         public virtual DbSet<Project> Projects { get; set; }

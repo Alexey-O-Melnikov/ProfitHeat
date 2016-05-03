@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace ProfitHeat.Domain
         /// площадь
         /// </summary>
         [DisplayName("Площадь")]
+        [Required(ErrorMessage = "Укажите площадь ограждающей конструкции")]
         public double Area { get; set; }
         /// <summary>
         /// материалы

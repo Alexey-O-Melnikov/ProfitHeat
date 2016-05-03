@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace ProfitHeat.Domain
         /// название модели
         /// </summary>
         [DisplayName("Модель")]
+        [Required(ErrorMessage = "Укажите модель радиатора")]
         public string TitleModel { get; set; }
         /// <summary>
         /// мощность одной секции

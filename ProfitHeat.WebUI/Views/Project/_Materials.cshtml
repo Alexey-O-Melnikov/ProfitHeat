@@ -3,12 +3,12 @@
 <div class="form-group">
     <label for="materials" class="control-label col-md-2">Материал</label>
     <div class="col-md-10">
-        <input type="text" list="materials" class="form-control" value="" />
-        <select id="materials">
+        <input type="text" list="materials" class="form-control" value="@ViewBag.Material.Title" />
+        <datalist id="materials">
             @foreach (var m in Model)
             {
                 <option>@m.Title</option>
             }
-        </select>
+        </datalist>
     </div>
 </div>

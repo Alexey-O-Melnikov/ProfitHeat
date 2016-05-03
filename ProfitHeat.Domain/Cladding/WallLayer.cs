@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProfitHeat.Domain
 {
@@ -18,6 +19,7 @@ namespace ProfitHeat.Domain
         /// толщина
         /// </summary>
         [DisplayName("Толщина слоя")]
+        [Required(ErrorMessage = "Укажите толщину слоя")]
         public double Thickness { get; set; }
     }
 }

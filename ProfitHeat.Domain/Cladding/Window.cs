@@ -29,11 +29,13 @@ namespace ProfitHeat.Domain
         /// площадь окна
         /// </summary>
         [DisplayName("Площадь окна")]
+        [Required(ErrorMessage = "Укажите площадь окна")]
         public double WindowArea { get; set; }
         /// <summary>
         /// площадь стеклопакета
         /// </summary>
         [DisplayName("Площадь стеклопакета")]
+        [Required(ErrorMessage = "Укажите площадь стеклопакета")]
         public double GlassArea { get; set; }
     }
 }

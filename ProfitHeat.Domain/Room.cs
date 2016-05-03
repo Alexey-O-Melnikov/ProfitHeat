@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,11 +29,13 @@ namespace ProfitHeat.Domain
         /// название
         /// </summary>
         [DisplayName("Название комнаты")]
+        [Required(ErrorMessage = "Укажите название комнаты")]
         public string Title { get; set; }
         /// <summary>
         /// этаж
         /// </summary>
         [DisplayName("Этаж")]
+        [Required(ErrorMessage = "Укажите этаж")]
         public int Level { get; set; }
         /// <summary>
         /// ограждающие конструкции

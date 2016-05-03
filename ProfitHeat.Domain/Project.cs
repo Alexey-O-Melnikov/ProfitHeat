@@ -28,6 +28,7 @@ namespace ProfitHeat.Domain
         /// название проекта
         /// </summary>
         [DisplayName("Название проекта")]
+        [Required(ErrorMessage = "Укажите название проекта")]
         public string Title { get; set; }
         /// <summary>
         /// дата/время создания

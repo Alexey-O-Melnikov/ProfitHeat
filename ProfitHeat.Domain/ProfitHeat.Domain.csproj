@@ -56,7 +56,7 @@
     <Compile Include="Cladding\Floor.cs" />
     <Compile Include="Cladding\Wall.cs" />
     <Compile Include="Cladding\WallLayer.cs" />
-    <Compile Include="Cladding\Сeiling.cs" />
+    <Compile Include="Cladding\Ceiling.cs" />
     <Compile Include="Migrations\201604231123027_AddedLazyLoading.cs" />
     <Compile Include="Migrations\201604231123027_AddedLazyLoading.Designer.cs">
       <DependentUpon>201604231123027_AddedLazyLoading.cs</DependentUpon>
