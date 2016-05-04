@@ -1,0 +1,14 @@
+﻿@model List<ProfitHeat.Domain.MaterialRadiator>
+<div class="form-group">
+    <label for="materialRadiators" class="control-label col-md-2">Материал радиатора:</label>
+    <div class="col-md-10">
+        <input type="text" list="materialRadiators" class="form-control" 
+               value="@(((ProfitHeat.Domain.MaterialRadiator)TempData.Peek("materialsRadiator")).TitleMaterialRadiator)">
+        <datalist id="materialRadiators">
+            @foreach (var m in Model)
+            {
+                <option>@m.TitleMaterialRadiator</option>
+            }
+        </datalist>
+    </div>
+</div>

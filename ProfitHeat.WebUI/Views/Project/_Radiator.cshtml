@@ -4,7 +4,7 @@
 <ul>
     <li>
         @{
-            Html.RenderAction("_MaterialRadiators", new { materialRadiatorID = Model.MaterialRadiatorID });
+            Html.RenderAction("_MaterialsRadiators", new { materialsRadiatorID = Model.MaterialRadiatorID });
         }
     </li>
     <li>
@@ -14,7 +14,12 @@
     </li>
     <li>
         @{
-
+            Html.RenderAction("_ModelRadiator", new
+            {
+                radiatorID = Model.RadiatorID,
+                materialRadiatorID = ((ProfitHeat.Domain.MaterialRadiator)TempData.Peek("materialsRadiator")).MaterialRadiatorID,
+                manufacturerRadiatorID = ((ProfitHeat.Domain.ManufacturerRadiator)TempData.Peek("manufacturerRadiator")).ManufacturerRadiatorID
+            });
         }
     </li>
 </ul>

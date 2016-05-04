@@ -48,8 +48,9 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(wallLayer);
         }
 
-        public PartialViewResult _Window(int? windowID)
+        public PartialViewResult _Window(int? windowID, int? i)
         {
+            ViewBag.NumWindow = i;
             var window = db.Windows.Find(windowID);
 
             return PartialView(window);
@@ -85,7 +86,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _ManufacturerRadiators(int? manufacturerRadiatorID)
         {
-            ViewBag.ManufacturerRadiator = db.ManufacturerRadiators.Find(manufacturerRadiatorID)
+            TempData["manufacturerRadiator"] = db.ManufacturerRadiators.Find(manufacturerRadiatorID)
                 ?? new ManufacturerRadiator { TitleCompany = "" };
             var manufacturerRadiators = db.ManufacturerRadiators.ToList();
 
@@ -94,11 +95,21 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _MaterialsRadiators(int? materialsRadiatorID)
         {
-            ViewBag.MaterialsRadiator = db.MaterialRadiators.Find(materialsRadiatorID)
+            TempData["materialsRadiator"] = db.MaterialRadiators.Find(materialsRadiatorID)
                 ?? new MaterialRadiator { TitleMaterialRadiator = "" };
             var materialsRadiators = db.MaterialRadiators.ToList();
 
             return PartialView(materialsRadiators);
+        }
+
+        public PartialViewResult _ModelRadiator(int? radiatorID, int? manufacturerRadiatorID, int? materialRadiatorID)
+        {
+            ViewBag.ModelRadiator = db.Radiators.Find(radiatorID);
+            var modelRadiators = db.Radiators
+                .Where(x => x.ManufacturerRadiatorID == manufacturerRadiatorID
+                    && x.MaterialRadiatorID == materialRadiatorID).ToList();
+
+            return PartialView(modelRadiators);
         }
 
         public PartialViewResult _Radiators(int? radiatorID)

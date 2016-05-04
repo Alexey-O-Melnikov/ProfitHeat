@@ -316,6 +316,9 @@
     <Content Include="Views\Project\_ManufacturerWindowProfiles.cshtml" />
     <Content Include="Views\Project\_Cladding.cshtml" />
     <Content Include="Views\Project\_WallLayer.cshtml" />
+    <Content Include="Views\Project\_MaterialsRadiators.cshtml" />
+    <Content Include="Views\Project\_ManufacturerRadiators.cshtml" />
+    <Content Include="Views\Project\_ModelRadiator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

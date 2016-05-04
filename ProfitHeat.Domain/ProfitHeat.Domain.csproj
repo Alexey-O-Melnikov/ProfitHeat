@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201604251458245_AddedTitleTypeRoom.Designer.cs">
       <DependentUpon>201604251458245_AddedTitleTypeRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605040854544_AddAtribute.cs" />
+    <Compile Include="Migrations\201605040854544_AddAtribute.Designer.cs">
+      <DependentUpon>201605040854544_AddAtribute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
     <Compile Include="Plot\Layer.cs" />
@@ -150,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604251458245_AddedTitleTypeRoom.resx">
       <DependentUpon>201604251458245_AddedTitleTypeRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605040854544_AddAtribute.resx">
+      <DependentUpon>201605040854544_AddAtribute.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

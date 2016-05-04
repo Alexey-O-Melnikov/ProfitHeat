@@ -10,26 +10,27 @@
         </div>
     </li>
     @*<div class="form-group">
-        @Html.LabelFor(model => model.TypeRoomID, "TypeRoomID", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("TypeRoomID", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.TypeRoomID, "", new { @class = "text-danger" })
-        </div>
-    </div>*@
+            @Html.LabelFor(model => model.TypeRoomID, "TypeRoomID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TypeRoomID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TypeRoomID, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
 
     @{
         Html.RenderAction("_TypeRooms", new { typeRoomID = Model.TypeRoomID });
     }
     @{
-        //Html.RenderAction("_Radiator", new { radiatorID = Model.RadiatorID });
+        Html.RenderAction("_Radiator", new { radiatorID = Model.RadiatorID });
     }
+    @{ int i = 1; }
     @foreach (var window in Model.Windows)
     {
-        ViewBag.NumWindow = 1;
+
         @:<li>
-            Html.RenderAction("_Window", new { windowID = window.WindowID });
+            Html.RenderAction("_Window", new { windowID = window.WindowID, i = i });
         @:</li>
-        ViewBag.NumWindow++;
+        i++;
     }
     @foreach (var cladding in Model.Claddings)
     {
