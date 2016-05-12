@@ -3,40 +3,42 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ProfitHeat</h1>
-    <p class="lead">Расчитайте отопительную систему выгодно для Вашего дома.</p>
-    <p><a href='@Url.Action("Index","Project")' class="btn btn-primary btn-lg">Новый проект &raquo;</a></p>
-</div>
+<div class="container">
+    <div class="jumbotron">
+        <h1>ProfitHeat</h1>
+        <p class="lead">Расчитайте отопительную систему выгодно для Вашего дома.</p>
+        <p><a href='@Url.Action("Index","Project")' class="btn btn-primary btn-lg">Новый проект &raquo;</a></p>
+    </div>
 
-<div class="row">
-    @*<table>
-            <thead>
-                <tr class="table-hover">
-                    <th>Название проекта</th>
-                    <th>Место расположения</th>
-                    <th>Дата создания</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var project in Model){
-                    <tr>
-                        <td>@project.Title</td>
-                        <td>@Html.DisplayFor(m => project.Location.Title)</td>
-                        <td>@project.CreateDateTime.ToString("dd MMMM, yyyyг.")</td>
+    <div class="row">
+        @*<table>
+                <thead>
+                    <tr class="table-hover">
+                        <th>Название проекта</th>
+                        <th>Место расположения</th>
+                        <th>Дата создания</th>
                     </tr>
-                }
-            </tbody>
-        </table>*@
-    @foreach (var project in Model)
-    {
-        <p>
-            @Html.ActionLink(
+                </thead>
+                <tbody>
+                    @foreach (var project in Model){
+                        <tr>
+                            <td>@project.Title</td>
+                            <td>@Html.DisplayFor(m => project.Location.Title)</td>
+                            <td>@project.CreateDateTime.ToString("dd MMMM, yyyyг.")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>*@
+        @foreach (var project in Model)
+        {
+            <p>
+                @Html.ActionLink(
               project.Title + " - " +
               project.Location.Title + " - " +
               project.CreateDateTime.ToString("dd MMMM, yyyyг."),
               "Index", "Project", new { id = project.ProjectID }, null)
-        </p>
-    }
+            </p>
+        }
 
+    </div>
 </div>

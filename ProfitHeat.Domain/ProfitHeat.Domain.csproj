@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201605040854544_AddAtribute.Designer.cs">
       <DependentUpon>201605040854544_AddAtribute.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605050905197_AddDiscriminator.cs" />
+    <Compile Include="Migrations\201605050905197_AddDiscriminator.Designer.cs">
+      <DependentUpon>201605050905197_AddDiscriminator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
     <Compile Include="Plot\Layer.cs" />
@@ -122,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605040854544_AddAtribute.resx">
       <DependentUpon>201605040854544_AddAtribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605050905197_AddDiscriminator.resx">
+      <DependentUpon>201605050905197_AddDiscriminator.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

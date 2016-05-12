@@ -1,8 +1,8 @@
 ﻿@model List<ProfitHeat.Domain.Radiator>
 
 <div class="form-group">
-    <label for="modelRadiator" class="control-label col-md-2">Модель радиатора:</label>
-    <div class="col-md-10">
+    <label for="modelRadiator" class="control-label">Модель радиатора:</label>
+    <div class="">
         <input type="text" list="modelRadiator" class="form-control" value="@ViewBag.ModelRadiator.TitleModel" />
         <datalist id="modelRadiator">
             @foreach (var item in Model)

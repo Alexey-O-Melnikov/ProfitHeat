@@ -39,5 +39,5 @@ namespace ProfitHeat.Domain
         /// комнаты
         /// </summary>
 		public virtual List<Room> Rooms { get; set; }
-	}
+    }
 }

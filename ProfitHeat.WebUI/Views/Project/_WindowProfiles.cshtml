@@ -3,9 +3,9 @@
 @{
     Html.RenderPartial("_ManufacturerWindowProfiles", new { manufacturerWindowProfileID = Model.});
 }
-<div class="form-group">
-    <label for="windowProfiles" class="control-label col-md-2">Модель профиля</label>
-    <div class="col-md-10">
+<div class="@*form-group*@">
+    <label for="windowProfiles" class="control-label">Модель профиля</label>
+    <div class="">
         <input type="text" class="form-control" list="windowProfiles" value="@ViewBag.WindowProfile" />
         <datalist id="windowProfiles">
             @foreach (var item in Model)

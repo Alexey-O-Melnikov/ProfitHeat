@@ -3,53 +3,60 @@
     ViewBag.Title = Model?.Title ?? "New";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
 
-<section id="initialData" class="left">
-    <div id="mainLocation">
-        @{
-            Html.RenderAction("_Locations", new { locationID = Model.LocationID });
-        }
-    </div>
-    <div id="level">
+<div class="container-fluid">
+    <div class="col-lg-3 col-md-4 col-sm-5 ">
+        <section id="initialData" >
+            <div id="mainLocation">
+                @{
+                    Html.RenderAction("_Locations", new { locationID = Model.LocationID });
+                }
+            </div>
 
-    </div>
-    <div id="room">
-        @{
-            Html.RenderAction("_Room", new { roomID = 3 });
-        }
-    </div>
-</section>
+            <div id="level">
 
-<section id="plot" class="top">
-    <div id="buttonsForDrawing">
-        <div id="inWallPlot" class="btn">
-            <img src="#" alt="Внешняя стена" />
-        </div>
-        <div id="outWallPlot" class="btn">
-            <img src="#" alt="Внутренняя стена" />
-        </div>
-        <div id="windowPlot" class="btn">
-            <img src="#" alt="Окно" />
-        </div>
-        <div id="doorPlot" class="btn">
-            <img src="#" alt="Дверь" />
-        </div>
-    </div>
-    <div>
-        <canvas id="canvas">
-            Браузер не поддерживает canvas
-        </canvas>
-    </div>
-</section>
+            </div>
 
-<section id="result" class="right">
-    <label>Мощность котла</label>
-    <label>Диаметр теплоносителя</label>
-    <table>
-        <thead>
-            <tr><td>Название комнаты</td><td>Количество секций</td></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</section>
+            <div id="room">
+                @{
+                    Html.RenderAction("_Room", new { roomID = 3 });
+                }
+            </div>
+        </section>
+
+        <section id="result">
+            <label>Мощность котла</label>
+            <label>Диаметр теплоносителя</label>
+            <table>
+                <thead>
+                    <tr><td>Название комнаты</td><td>Количество секций</td></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+    <section id="plot" class="top">
+        <div id="buttonsForDrawing">
+            <div id="inWallPlot" class="btn">
+                <img src="#" alt="Внешняя стена" />
+            </div>
+            <div id="outWallPlot" class="btn">
+                <img src="#" alt="Внутренняя стена" />
+            </div>
+            <div id="windowPlot" class="btn">
+                <img src="#" alt="Окно" />
+            </div>
+            <div id="doorPlot" class="btn">
+                <img src="#" alt="Дверь" />
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-7">
+            <canvas id="canvas" width="1280", height="914">
+                Браузер не поддерживает canvas
+            </canvas>
+        </div>
+    </section>
+
+</div>

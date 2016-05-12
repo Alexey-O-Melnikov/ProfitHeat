@@ -1,8 +1,8 @@
 ﻿@model List<ProfitHeat.Domain.ManufacturerWindowProfile>
 
-<div class="form-group">
+<div class="@*form-group*@">
     <label for="ManufacturerWindowProfiles">Производитель профиля</label>
-    <div class="col-md-10">
+    <div class="">
         <input type="text" list="ManufacturerWindowProfiles" value="@ViewBag.ManufacturerWindowProfile" />
         <datalist id="ManufacturerWindowProfiles">
             @foreach (var item in Model)

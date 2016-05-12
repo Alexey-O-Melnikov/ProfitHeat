@@ -1,8 +1,8 @@
 ﻿@model List<ProfitHeat.Domain.TypeRoom>
 
-<div class="form-group">
-    <label for="typeRooms" class="control-label col-md-2">Тип комнаты:</label>
-    <div class="col-md-10">
+<div class="@*form-group*@">
+    <label for="typeRooms" class="control-label">Тип комнаты:</label>
+    <div class="">
         <input type="text" list="typeRooms" class="form-control" value="@ViewBag.TypeRoom.TitleTypeRoom">
         <datalist id="typeRooms">
             @foreach (var m in Model)
