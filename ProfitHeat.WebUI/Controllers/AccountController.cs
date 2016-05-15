@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ProfitHeat.WebUI.Models;
+using ProfitHeat.Domain;
 
 namespace ProfitHeat.WebUI.Controllers
 {

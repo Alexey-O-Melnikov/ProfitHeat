@@ -2,16 +2,17 @@
 
 <label>Окно №@ViewBag.NumWindow <b class="caret"></b></label>
 <ul>
-    @*<li>
-            @{
-                Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
-            }
-        </li>
-        <li>
-            @{
-                Html.RenderAction("_WindowProfiles", new { windowProfileID = Model.WindowProfileID });
-            }
-        </li>*@
+   <li>
+        @{
+            Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
+        }
+    </li>
+    <li>
+        @{
+            Html.RenderAction("_WindowProfiles", new { windowProfileID = Model.WindowProfileID
+            });
+        }
+    </li>
     <li>
         <div class="@*form-group*@">
             @Html.LabelFor(model => model.WindowArea, htmlAttributes: new { @class = "control-label" })

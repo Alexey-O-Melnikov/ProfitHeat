@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,13 @@ namespace ProfitHeat.Domain
 		public int ProjectID { get; set; }
         public int LocationID { get; set; }
         public int PlotID { get; set; }
+        public string UserID { get; set; }
+        [ForeignKey("UserID")]
+        public ApplicationUser ApplicationUser { get; set; }
         /// <summary>
         /// регион расположения
         /// </summary>
-		public virtual Location Location { get; set; }
+        public virtual Location Location { get; set; }
         /// <summary>
         /// чертеж - схема
         /// </summary>

@@ -7,13 +7,13 @@ namespace ProfitHeat.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddDiscriminator : IMigrationMetadata
+    public sealed partial class AddAuthentication : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDiscriminator));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAuthentication));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605050905197_AddDiscriminator"; }
+            get { return "201605151212095_AddAuthentication"; }
         }
         
         string IMigrationMetadata.Source

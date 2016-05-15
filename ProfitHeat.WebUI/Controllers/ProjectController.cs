@@ -132,7 +132,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _WindowProfiles(int? windowProfileID)
         {
-            ViewBag.WindowProfile = db.WindowsProfiles.Find(windowProfileID)
+            TempData["WindowProfile"] = db.WindowsProfiles.Find(windowProfileID)
                 ?? new WindowProfile { };////////////////////////////////////////////////////////////////////
             var windowProfiles = db.WindowsProfiles.ToList();
 
