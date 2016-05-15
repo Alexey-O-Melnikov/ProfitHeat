@@ -12,7 +12,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
 {
     public class ManufacturerRadiatorsController : Controller
     {
-        private StoreEFContext db = new StoreEFContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ManufacturerRadiators
         public ActionResult Index()

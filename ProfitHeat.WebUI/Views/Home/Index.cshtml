@@ -31,14 +31,16 @@
             </table>*@
         @foreach (var project in Model)
         {
-            <p>
+            if (ViewBag.UserID == project.UserID)
+            {
+                <p>
                 @Html.ActionLink(
-              project.Title + " - " +
-              project.Location.Title + " - " +
-              project.CreateDateTime.ToString("dd MMMM, yyyyг."),
-              "Index", "Project", new { id = project.ProjectID }, null)
-            </p>
+                    project.Title + " - " +
+                    project.Location.Title + " - " +
+                    project.CreateDateTime.ToString("dd MMMM, yyyyг."),
+                    "Index", "Project", new { ProjectID = project.ProjectID }, null)
+                </p>
+            }
         }
-
     </div>
 </div>

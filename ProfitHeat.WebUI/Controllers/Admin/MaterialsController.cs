@@ -12,7 +12,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin
 {
     public class MaterialsController : Controller
     {
-        private StoreEFContext db = new StoreEFContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Materials
         public ActionResult Index()

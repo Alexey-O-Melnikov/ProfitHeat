@@ -10,13 +10,13 @@ namespace ProfitHeat.WebUI.Controllers
 {
     public class ProjectController : Controller
     {
-        StoreEFContext db = new StoreEFContext();
+        ApplicationDbContext db = new ApplicationDbContext();
         // GET: Project
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? ProjectID)
         {
             //if (id == null)
             //    return View();
-            var project = db.Projects.Find(id) ?? new Project { CreateDateTime = DateTime.Now };
+            var project = db.Projects.Find(ProjectID) ?? new Project { CreateDateTime = DateTime.Now };
             return View(project);
         }
 

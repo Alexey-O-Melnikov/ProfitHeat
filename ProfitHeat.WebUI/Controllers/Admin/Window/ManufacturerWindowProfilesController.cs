@@ -12,7 +12,7 @@ namespace ProfitHeat.WebUI.Controllers.Admin.Window
 {
     public class ManufacturerWindowProfilesController : Controller
     {
-        private StoreEFContext db = new StoreEFContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ManufacturerWindowProfiles
         public ActionResult Index()

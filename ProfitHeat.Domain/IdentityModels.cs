@@ -7,8 +7,9 @@ using System.Collections.Generic;
 using ProfitHeat.Domain;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 
-namespace ProfitHeat.Domain/*ProfitHeat.WebUI.Models*///
+namespace ProfitHeat.Domain
 {
     // Чтобы добавить данные профиля для пользователя, можно добавить дополнительные свойства в класс ApplicationUser. Дополнительные сведения см. по адресу: http://go.microsoft.com/fwlink/?LinkID=317594.
     public class ApplicationUser : IdentityUser
@@ -23,12 +24,65 @@ namespace ProfitHeat.Domain/*ProfitHeat.WebUI.Models*///
         }
     }
 
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("StoreEFContext", throwIfV1Schema: false)
         {
         }
+
+        public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Window> Windows { get; set; }
+        public virtual DbSet<Cladding> Claddings { get; set; }
+        public virtual DbSet<WallLayer> WallLayers { get; set; }
+        //Plot
+        public virtual DbSet<Plot> Plots { get; set; }
+        public virtual DbSet<Layer> Layers { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+        //Tabular
+        public virtual DbSet<Glass> Glasses { get; set; }
+        public virtual DbSet<WindowProfile> WindowsProfiles { get; set; }
+        public virtual DbSet<ManufacturerWindowProfile> ManufacturerWindowProfiles { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Material> Materials { get; set; }
+        public virtual DbSet<Radiator> Radiators { get; set; }
+        public virtual DbSet<ManufacturerRadiator> ManufacturerRadiators { get; set; }
+        public virtual DbSet<MaterialRadiator> MaterialRadiators { get; set; }
+        public virtual DbSet<TypeRoom> TypesRooms { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<IdentityUser>().ToTable("AspNetUsers");
+
+            EntityTypeConfiguration<ApplicationUser> table =
+                modelBuilder.Entity<ApplicationUser>().ToTable("AspNetUsers");
+
+            table.Property((ApplicationUser u) => u.UserName).IsRequired();
+
+            modelBuilder.Entity<ApplicationUser>().HasMany<IdentityUserRole>((ApplicationUser u) => u.Roles);
+            modelBuilder.Entity<IdentityUserRole>().HasKey((IdentityUserRole r) =>
+                new { UserId = r.UserId, RoleId = r.RoleId }).ToTable("AspNetUserRoles");
+
+            EntityTypeConfiguration<IdentityUserLogin> entityTypeConfiguration =
+                modelBuilder.Entity<IdentityUserLogin>().HasKey((IdentityUserLogin l) =>
+                    new
+                    {
+                        UserId = l.UserId,
+                        LoginProvider = l.LoginProvider,
+                        ProviderKey =
+                        l.ProviderKey
+                    }).ToTable("AspNetUserLogins");
+
+            modelBuilder.Entity<IdentityRole>().ToTable("AspNetRoles");
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(o => o.Projects)
+                .WithRequired()
+                .HasForeignKey(o => o.UserID);
+        }
+
 
         public static ApplicationDbContext Create()
         {
