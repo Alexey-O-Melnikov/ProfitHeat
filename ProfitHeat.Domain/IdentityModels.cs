@@ -81,6 +81,30 @@ namespace ProfitHeat.Domain
                 .HasMany(o => o.Projects)
                 .WithRequired()
                 .HasForeignKey(o => o.UserID);
+
+            //типы ограждающей конструкции
+            //string claddingType = "CladdingType";
+            //modelBuilder.Entity<Cladding>()
+            //    .Map<Wall>(m =>
+            //    {
+            //        //m.Requires(claddingType).HasValue("Стена");
+            //        m.ToTable("Wall");
+            //    })
+            //    .Map<Roof>(m =>
+            //    {
+            //        //m.Requires(claddingType).HasValue("Потолок");
+            //        m.ToTable("Roof");
+            //    })
+            //    .Map<Floor>(m =>
+            //    {
+            //        //m.Requires(claddingType).HasValue("Полы");
+            //        m.ToTable("Floor");
+            //    })
+            //    .Map<Door>(m =>
+            //    {
+            //        //m.Requires(claddingType).HasValue("Дверь");
+            //        m.ToTable("Door");
+            //    });
         }
 
 

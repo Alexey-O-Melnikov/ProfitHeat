@@ -1,4 +1,6 @@
-﻿using ProfitHeat.Domain;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using ProfitHeat.Domain;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,23 +15,14 @@ namespace ProfitHeat.WebUI.Controllers
     {
         public ActionResult Index()
         {
-            //try
-            //{
-            //    DbContext = new ApplicationDbContext();
-            //    DbContext.Database.Initialize(false);
-            //}
-            //catch (Exception ex)
-            //{
-            //    for (int i = 0; i < 10; i++)
-            //    {
-            //        Debug.WriteLine("Инициализация не выполнена. Ошибка: ");
-            //        Debug.WriteLine(ex.Message);
-            //        Thread.Sleep(300);
-            //    }
-            //}
-
             ApplicationDbContext DbContext = new ApplicationDbContext();
-            ViewBag.UserID = "2a19a491-b520-4db8-b18b-877a24d66603";
+
+            //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(DbContext));
+            //userManager.AddToRole(DbContext.Users.First(u => u.UserName == "1@1.ru").Id, "admin");
+
+            string userName = User.Identity.Name;
+            if (!String.IsNullOrWhiteSpace(userName))
+                ViewBag.UserID = DbContext. Users.First(u => u.UserName == userName).Id;
             return View(DbContext.Projects.ToList());
         }
 

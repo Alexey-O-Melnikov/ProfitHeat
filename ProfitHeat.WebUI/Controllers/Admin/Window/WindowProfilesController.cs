@@ -10,6 +10,7 @@ using ProfitHeat.Domain;
 
 namespace ProfitHeat.WebUI.Controllers.Admin.Window
 {
+    [Authorize(Roles = "admin")]
     public class WindowProfilesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

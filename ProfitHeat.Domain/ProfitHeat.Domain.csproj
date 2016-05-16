@@ -66,9 +66,9 @@
     <Compile Include="Cladding\Cladding.cs" />
     <Compile Include="Cladding\Door.cs" />
     <Compile Include="Cladding\Floor.cs" />
+    <Compile Include="Cladding\Roof.cs" />
     <Compile Include="Cladding\Wall.cs" />
     <Compile Include="Cladding\WallLayer.cs" />
-    <Compile Include="Cladding\Ceiling.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201604231123027_AddedLazyLoading.cs" />
     <Compile Include="Migrations\201604231123027_AddedLazyLoading.Designer.cs">
@@ -121,6 +121,30 @@
     <Compile Include="Migrations\201605151352266_AddNewDbContext.cs" />
     <Compile Include="Migrations\201605151352266_AddNewDbContext.Designer.cs">
       <DependentUpon>201605151352266_AddNewDbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161427574_AddNormalCladding.cs" />
+    <Compile Include="Migrations\201605161427574_AddNormalCladding.Designer.cs">
+      <DependentUpon>201605161427574_AddNormalCladding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161441041_AddTablePerType.cs" />
+    <Compile Include="Migrations\201605161441041_AddTablePerType.Designer.cs">
+      <DependentUpon>201605161441041_AddTablePerType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161534270_ChangeCeilingToRoof.cs" />
+    <Compile Include="Migrations\201605161534270_ChangeCeilingToRoof.Designer.cs">
+      <DependentUpon>201605161534270_ChangeCeilingToRoof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161548327_AddPotolok.cs" />
+    <Compile Include="Migrations\201605161548327_AddPotolok.Designer.cs">
+      <DependentUpon>201605161548327_AddPotolok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161607075_AddPublicRoof.cs" />
+    <Compile Include="Migrations\201605161607075_AddPublicRoof.Designer.cs">
+      <DependentUpon>201605161607075_AddPublicRoof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161616102_AddCladdingType.cs" />
+    <Compile Include="Migrations\201605161616102_AddCladdingType.Designer.cs">
+      <DependentUpon>201605161616102_AddCladdingType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
@@ -184,6 +208,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605151352266_AddNewDbContext.resx">
       <DependentUpon>201605151352266_AddNewDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161427574_AddNormalCladding.resx">
+      <DependentUpon>201605161427574_AddNormalCladding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161441041_AddTablePerType.resx">
+      <DependentUpon>201605161441041_AddTablePerType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161534270_ChangeCeilingToRoof.resx">
+      <DependentUpon>201605161534270_ChangeCeilingToRoof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161548327_AddPotolok.resx">
+      <DependentUpon>201605161548327_AddPotolok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161607075_AddPublicRoof.resx">
+      <DependentUpon>201605161607075_AddPublicRoof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161616102_AddCladdingType.resx">
+      <DependentUpon>201605161616102_AddCladdingType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

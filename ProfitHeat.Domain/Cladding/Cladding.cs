@@ -25,6 +25,10 @@ namespace ProfitHeat.Domain
         /// материалы
         /// </summary>
         public virtual List<WallLayer> WallLayers { get; set; }
+        /// <summary>
+        /// тип конструкции
+        /// </summary>
+        public string CladdingType { get; set; }
         ///// <summary>
         ///// коэффициент уменьшения разности температур (n)
         ///// </summary>

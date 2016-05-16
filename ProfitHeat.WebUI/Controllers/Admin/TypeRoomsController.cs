@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ProfitHeat.Domain;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProfitHeat.WebUI.Controllers.Admin
 {
+    [Authorize(Roles = "admin")]
     public class TypeRoomsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

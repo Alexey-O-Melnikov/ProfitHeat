@@ -8,6 +8,7 @@ using ProfitHeat.WebUI.Models;
 
 namespace ProfitHeat.WebUI.Controllers
 {
+    [Authorize]
     public class ProjectController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();

@@ -20,11 +20,9 @@
 @{
     Html.RenderAction("_Radiator", new { radiatorID = Model.RadiatorID });
 }
-
+<br />
 @foreach (var cladding in Model.Claddings)
 {
-    <label>Ограждающая конструкция <b class="caret"></b></label>
-
     Html.RenderAction("_Cladding", new { claddingID = cladding.CladdingID });
 }
 

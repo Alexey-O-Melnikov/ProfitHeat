@@ -10,6 +10,7 @@ using ProfitHeat.Domain;
 
 namespace ProfitHeat.WebUI.Controllers.Admin
 {
+    [Authorize(Roles = "admin")]
     public class LocationsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
