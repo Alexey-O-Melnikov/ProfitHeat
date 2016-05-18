@@ -28,12 +28,12 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(room);
         }
 
-        public PartialViewResult _Radiator(int? radiatorID)
-        {
-            var radiator = db.Radiators.Find(radiatorID);
+        //public PartialViewResult _Radiator(int? radiatorID)
+        //{
+        //    var radiator = db.Radiators.Find(radiatorID);
 
-            return PartialView(radiator);
-        }
+        //    return PartialView(radiator);
+        //}
 
         public PartialViewResult _Cladding(int? claddingID)
         {
@@ -113,13 +113,12 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(modelRadiators);
         }
 
-        public PartialViewResult _Radiators(int? radiatorID)
+        public ActionResult _Radiator(int? radiatorID)
         {
             ViewBag.Radiator = db.Radiators.Find(radiatorID)
                 ?? new Radiator { };////////////////////////////////////////////////////////////////////////
-            var radiators = db.Radiators.ToList();
-
-            return PartialView(radiators);
+            var radiator = db.Radiators.Find(radiatorID);
+            return PartialView(radiator);
         }
 
         public PartialViewResult _Glasses(int? glassID)

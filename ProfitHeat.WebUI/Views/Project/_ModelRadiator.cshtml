@@ -3,7 +3,7 @@
 <div class="form-group">
     <label for="modelRadiator" class="control-label">Модель радиатора:</label>
     <div class="">
-        <input type="text" list="modelRadiator" class="form-control" value="@ViewBag.ModelRadiator.TitleModel" />
+        <input id="modelRadiator" type="text" list="modelRadiator" class="form-control" value="@ViewBag.ModelRadiator.TitleModel" />
         <datalist id="modelRadiator">
             @foreach (var item in Model)
             {

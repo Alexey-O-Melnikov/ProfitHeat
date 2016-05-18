@@ -17,9 +17,17 @@
 @{
     Html.RenderAction("_TypeRooms", new { typeRoomID = Model.TypeRoomID });
 }
+
+
+@*@Html.ActionLink("Радиатор", "_Radiator", new { radiatorID = Model.RadiatorID }, new { id = "radiator" })<b class="caret"></b>*@
+@*@Ajax.ActionLink("Радиатор", "_Radiator", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "renderRadiator" })
+<div id="renderRadiator"></div>*@
+
 @{
     Html.RenderAction("_Radiator", new { radiatorID = Model.RadiatorID });
 }
+
+
 <br />
 @foreach (var cladding in Model.Claddings)
 {
@@ -29,13 +37,12 @@
 <label>Окна <b class="caret"></b></label>
 @{ int i = 1; }
 <ul>
-@foreach (var window in Model.Windows)
-{
-
-    @:<li>
-        Html.RenderAction("_Window", new { windowID = window.WindowID, i = i });
-    @:</li>
-    i++;
-}
+    @foreach (var window in Model.Windows)
+    {
+        @:<li>
+            Html.RenderAction("_Window", new { windowID = window.WindowID, i = i });
+        @:</li>
+        i++;
+    }
 </ul>
 

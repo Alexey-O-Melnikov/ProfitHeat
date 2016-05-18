@@ -2,7 +2,7 @@
 <div class="@*form-group*@">
     <label for="manufacturerRadiators" class="control-label">Производитель:</label>
     <div class="">
-        <input type="text" list="manufacturerRadiators" class="form-control" 
+        <input id="manufacturerRadiators" type="text" list="manufacturerRadiators" class="form-control" 
                value="@(((ProfitHeat.Domain.ManufacturerRadiator)@TempData.Peek("manufacturerRadiator")).TitleCompany)">
         <datalist id="manufacturerRadiators">
             @foreach (var m in Model)

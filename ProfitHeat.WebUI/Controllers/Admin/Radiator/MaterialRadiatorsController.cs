@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ProfitHeat.Domain;
 
-namespace ProfitHeat.WebUI.Controllers.Admin
+namespace ProfitHeat.WebUI.Controllers
 {
     [Authorize(Roles = "admin")]
     public class MaterialRadiatorsController : Controller

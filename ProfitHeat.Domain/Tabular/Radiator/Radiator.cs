@@ -17,13 +17,13 @@ namespace ProfitHeat.Domain
         public int ManufacturerRadiatorID { get; set; }
         public int MaterialRadiatorID { get; set; }
         /// <summary>
+        /// материал радиатора
+        /// </summary>
+        public virtual MaterialRadiator MaterialRadiator { get; set; }
+        /// <summary>
         /// компания производитель радиаторов
         /// </summary>
         public virtual ManufacturerRadiator ManufacturerRadiator { get; set; }
-        /// <summary>
-        /// материал радиатора
-        /// </summary>
-        public virtual MaterialRadiator Material { get; set; }
         /// <summary>
         /// название модели
         /// </summary>

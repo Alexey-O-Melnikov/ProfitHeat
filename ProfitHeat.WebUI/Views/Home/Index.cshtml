@@ -43,4 +43,7 @@
             }
         }
     </div>
+    @Ajax.ActionLink("Go", "InfoProject", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "result" })
+    @*@Html.ActionLink( new { str = "Ура заработало" }, new { id = "resultLink" })*@
+    <div id="result"></div>
 </div>
