@@ -1,4 +1,4 @@
-﻿@model ProfitHeat.Domain.Material
+﻿@model ProfitHeat.Domain.WindowProfile
 
 @{
     ViewBag.Title = "Details";
@@ -7,15 +7,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Material</h4>
+    <h4>WindowProfile</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.CountCameras)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.CountCameras)
         </dd>
 
         <dt>
@@ -27,16 +27,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HeatConductivityCoefficient)
+            @Html.DisplayNameFor(model => model.HeatResistanceCoefficient)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HeatConductivityCoefficient)
+            @Html.DisplayFor(model => model.HeatResistanceCoefficient)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WindowProfileID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

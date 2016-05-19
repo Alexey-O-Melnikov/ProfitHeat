@@ -51,6 +51,7 @@ namespace ProfitHeat.Domain
         public virtual DbSet<ManufacturerRadiator> ManufacturerRadiators { get; set; }
         public virtual DbSet<MaterialRadiator> MaterialRadiators { get; set; }
         public virtual DbSet<TypeRoom> TypesRooms { get; set; }
+        public virtual DbSet<Pipe> Pipes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
