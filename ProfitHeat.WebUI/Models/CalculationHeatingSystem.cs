@@ -9,9 +9,18 @@ namespace ProfitHeat.WebUI.Models
 {
     public class CalculationHeatingSystem
     {
+        public double PowerBoiler { get; set; }
+        public int DiameterCoolant { get; set; }
+        public List<CountSectionRadiator> Radiators { get; set; }
+
         Project project = null;
 
-        public void GetResult(int projectID)
+        public CalculationHeatingSystem(int? projectID)
+        {
+            Calculation(projectID);
+        }
+
+        private void Calculation(int? projectID)
         {
             var db = new ApplicationDbContext();
             project = db.Projects.Find(projectID);
@@ -46,6 +55,10 @@ namespace ProfitHeat.WebUI.Models
                     break;
                 }
             }
+
+            PowerBoiler = powerBoiler;
+            DiameterCoolant = diameterCoolant;
+            Radiators = radiators;
         }
 
         /// <summary>

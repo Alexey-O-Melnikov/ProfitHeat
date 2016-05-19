@@ -13,12 +13,23 @@ namespace ProfitHeat.WebUI.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         // GET: Project
-        public ActionResult Index(int? ProjectID)
+        public ActionResult Index(int? projectID)
         {
             //if (id == null)
             //    return View();
-            var project = db.Projects.Find(ProjectID) ?? new Project { CreateDateTime = DateTime.Now };
+            var project = db.Projects.Find(projectID) ?? new Project { CreateDateTime = DateTime.Now };
             return View(project);
+        }
+
+        public PartialViewResult _Result(int? projectID)
+        {
+            CalculationHeatingSystem calc = new CalculationHeatingSystem(projectID);
+
+            ViewBag.PowerBoiler = calc.PowerBoiler;
+            ViewBag.DiameterCoolant = calc.DiameterCoolant;
+            ViewBag.Radiators = calc.Radiators;
+
+            return PartialView();
         }
 
         public PartialViewResult _Room(int? roomID)

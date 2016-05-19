@@ -366,6 +366,7 @@
     <Content Include="Views\Radiators\Edit.cshtml" />
     <Content Include="Views\Radiators\Index.cshtml" />
     <Content Include="Views\Home\InfoProject.cshtml" />
+    <Content Include="Views\Project\_Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

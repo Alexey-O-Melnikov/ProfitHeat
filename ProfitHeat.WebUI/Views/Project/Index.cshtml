@@ -15,26 +15,27 @@
                 }
             </div>
 
-            <div id="level">
-
+            <div id="forLevel">
+                <label class="control-label" for="level">Этаж</label>
+                <select id="level" class="list-group-item">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
             </div>
-
+            <hr />
             <div id="room">
                 @{
                     Html.RenderAction("_Room", new { roomID = 5 });
                 }
             </div>
         </section>
-
+        <hr />
         <section id="result">
-            <label>Мощность котла</label>
-            <label>Диаметр теплоносителя</label>
-            <table>
-                <thead>
-                    <tr><td>Название комнаты</td><td>Количество секций</td></tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            @{
+                Html.RenderAction("_Result", new { projectID = Model.ProjectID });
+            }
         </section>
     </div>
     <section id="plot" class="top">
