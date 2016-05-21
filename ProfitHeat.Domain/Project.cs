@@ -16,7 +16,6 @@ namespace ProfitHeat.Domain
 	{
 		public int ProjectID { get; set; }
         public int LocationID { get; set; }
-        public int PlotID { get; set; }
         public string UserID { get; set; }
         [ForeignKey("UserID")]
         public ApplicationUser ApplicationUser { get; set; }
@@ -24,10 +23,6 @@ namespace ProfitHeat.Domain
         /// регион расположения
         /// </summary>
         public virtual Location Location { get; set; }
-        /// <summary>
-        /// чертеж - схема
-        /// </summary>
-		public virtual Plot Plot { get; set; }
         /// <summary>
         /// название проекта
         /// </summary>
@@ -43,5 +38,10 @@ namespace ProfitHeat.Domain
         /// комнаты
         /// </summary>
 		public virtual List<Room> Rooms { get; set; }
+        /// <summary>
+        /// слои
+        /// </summary>
+        public virtual List<Layer> Layers { get; set; }
+
     }
 }

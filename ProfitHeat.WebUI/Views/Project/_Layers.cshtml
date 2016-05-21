@@ -1,0 +1,10 @@
+﻿@model List<ProfitHeat.Domain.Layer>
+<label for="levelInput" class="control-label">Этаж</label>
+<input id="levelInput" type="text" list="level" class="form-control"
+       value="@Model.First().LayerNumber">
+<datalist id="level">
+    @foreach (var m in Model)
+    {
+        <option>@m.LayerNumber</option>
+    }
+</datalist>

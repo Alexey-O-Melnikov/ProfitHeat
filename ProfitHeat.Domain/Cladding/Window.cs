@@ -20,10 +20,12 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// стеклопакет
         /// </summary>
+        [DisplayName("Стеклопакет")]
         public virtual Glass Glass { get; set; }
         /// <summary>
         /// оконный профиль
         /// </summary>
+        [DisplayName("Оконный профиль")]
         public virtual WindowProfile WindowProfile { get; set; }
         /// <summary>
         /// площадь окна

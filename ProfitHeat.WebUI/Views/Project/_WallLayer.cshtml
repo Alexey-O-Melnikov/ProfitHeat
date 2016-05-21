@@ -1,17 +1,19 @@
 ﻿@model ProfitHeat.Domain.WallLayer
-
-<ul>
-    <li>
-        @{
-            Html.RenderAction("_Materials", new { materialID = Model.MaterialID });
-        }
-    </li>
-    <li>
-        <div class="@*form-group*@">
-            @Html.LabelFor(model => model.Thickness, htmlAttributes: new { @class = "control-label"})
-            <div class="">
-                @Html.EditorFor(model => model.Thickness, new { htmlAttributes = new { @class = "form-control" } })
+<li>
+    <label class="control-label">Слой <b class="caret"></b></label>
+    <ul>
+        <li>
+            @{
+                Html.RenderAction("_Materials", new { materialID = Model.MaterialID });
+            }
+        </li>
+        <li>
+            <div class="@*form-group*@">
+                @Html.LabelFor(model => model.Thickness, htmlAttributes: new { @class = "control-label" })
+                <div class="">
+                    @Html.EditorFor(model => model.Thickness, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </li>
+    </ul>
+</li>

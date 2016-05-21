@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProfitHeat.Domain
 {
     public class Layer
     {
         public int LayerID { get; set; }
-        public int PlotID { get; set; }
+        public int ProjectID { get; set; }
         /// <summary>
         /// номер слоя
         /// </summary>

@@ -1,5 +1,4 @@
 ﻿@model ProfitHeat.Domain.Cladding
-
 <label>@Model.CladdingType <b class="caret"></b></label>
 <ul>
     <li>
@@ -10,10 +9,19 @@
             </div>
         </div>
     </li>
+    @{
+        string str = "newWallLayer" + Model.CladdingType;
+    }
     @foreach (var item in Model.WallLayers)
     {
-        @:<li>
-            Html.RenderAction("_WallLayer", new { wallLayerID = item.WallLayerID });
-        @:</li>
+        Html.RenderAction("_WallLayer", new { wallLayerID = item.WallLayerID });
     }
+    <li id=@str>
+        <br />
+        @Ajax.ActionLink("Добавить новый слой", "_WallLayer", "Project", new { wallLayerID = 0 }, new AjaxOptions { InsertionMode = InsertionMode.InsertBefore, UpdateTargetId = str }, new { @class = "btn btn-info"})
+    </li>
+
 </ul>
+
+
+

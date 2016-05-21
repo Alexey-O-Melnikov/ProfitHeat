@@ -1,18 +1,6 @@
 ﻿@model ProfitHeat.Domain.Window
 
-<label>Окно №@ViewBag.NumWindow <b class="caret"></b></label>
 <ul>
-   <li>
-        @{
-            Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
-        }
-    </li>
-    <li>
-        @{
-            Html.RenderAction("_WindowProfiles", new { windowProfileID = Model.WindowProfileID
-            });
-        }
-    </li>
     <li>
         <div class="@*form-group*@">
             @Html.LabelFor(model => model.WindowArea, htmlAttributes: new { @class = "control-label" })
@@ -22,11 +10,36 @@
         </div>
     </li>
     <li>
-        <div class="@*form-group*@">
-            @Html.LabelFor(model => model.GlassArea, htmlAttributes: new { @class = "control-label" })
-            <div class="">
-                @Html.EditorFor(model => model.GlassArea, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>
+        @Html.LabelFor(m => m.Glass, htmlAttributes: new { @class = "control-label" }) <b class="caret"></b>
+        <ul>
+            <li>
+                @{
+                    Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
+                }
+            </li>
+            <li>
+                <div class="@*form-group*@">
+                    @Html.LabelFor(model => model.GlassArea, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.GlassArea, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li>
+        @Html.LabelFor(model => model.WindowProfile, htmlAttributes: new { @class = "control-label" }) <b class="caret"></b>
+        <ul>
+            <li>
+                @{
+                    Html.RenderAction("_ManufacturerWindowProfiles", new { manufacturerWindowProfileID = Model.WindowProfile.ManufacturerWindowProfileID });
+                }
+            </li>
+            <li>
+                @{
+                    Html.RenderAction("_WindowProfiles", new { windowProfileID = Model.WindowProfileID });
+                }
+            </li>
+        </ul>
     </li>
 </ul>

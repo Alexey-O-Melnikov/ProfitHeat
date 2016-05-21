@@ -44,6 +44,7 @@ namespace ProfitHeat.Domain
         /// <summary>
         /// окна
         /// </summary>
+        [DisplayName("Окно")]
         public virtual List<Window> Windows { get; set; }
         ///// <summary>
         ///// добавочные потери теплоты (β)

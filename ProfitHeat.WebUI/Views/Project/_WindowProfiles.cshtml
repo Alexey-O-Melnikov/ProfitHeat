@@ -6,7 +6,7 @@
 <div class="@*form-group*@">
     <label for="windowProfiles" class="control-label">Модель профиля</label>
     <div class="">
-        <input type="text" class="form-control" list="windowProfiles" value="@((ProfitHeat.Domain.WindowProfile)TempData.Peek("WindowProfile")).TitleMark" />
+        <input type="text" class="form-control" list="windowProfiles" value="@ViewBag.WindowProfile.TitleMark" />
         <datalist id="windowProfiles">
             @foreach (var item in Model)
             {

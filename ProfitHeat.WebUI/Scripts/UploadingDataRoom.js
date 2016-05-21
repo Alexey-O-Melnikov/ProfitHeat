@@ -26,13 +26,14 @@
 //    });
 //});
 
-$(function () {
-    var autocompleteUrl = '@Url.Action("Find")';
-    $("input#city").autocomplete({
-        source: autocompleteUrl,
-        minLength: 2,
-        select: function (event, ui) {
-            alert("Selected " + ui.item.label);
-        }
-    });
-});
+//$(function () {
+//    var autocompleteUrl = '@Url.Action("Find")';
+//    $("input#city").autocomplete({
+//        source: autocompleteUrl,
+//        minLength: 2,
+//        select: function (event, ui) {
+//            alert("Selected " + ui.item.label);
+//        }
+//    });
+//});
+

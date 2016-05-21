@@ -187,6 +187,7 @@
     <Compile Include="Models\CalculationHeatingSystem.cs" />
     <Compile Include="Models\InitRooms.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -365,8 +366,8 @@
     <Content Include="Views\Radiators\Details.cshtml" />
     <Content Include="Views\Radiators\Edit.cshtml" />
     <Content Include="Views\Radiators\Index.cshtml" />
-    <Content Include="Views\Home\InfoProject.cshtml" />
     <Content Include="Views\Project\_Result.cshtml" />
+    <Content Include="Views\Project\_Layers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

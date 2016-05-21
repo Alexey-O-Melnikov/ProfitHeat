@@ -1,5 +1,5 @@
 ﻿@model ProfitHeat.Domain.Radiator
-<div class="btn-group">
+<div id="radiator" class="btn-group">
     <label for="radiator" class="">Радиатор <b class="caret"></b></label>
     <ul class="">
         <li>
@@ -17,8 +17,8 @@
                 Html.RenderAction("_ModelRadiator", new
                 {
                     radiatorID = Model.RadiatorID,
-                    materialRadiatorID = ((ProfitHeat.Domain.MaterialRadiator)TempData.Peek("materialsRadiator")).MaterialRadiatorID,
-                    manufacturerRadiatorID = ((ProfitHeat.Domain.ManufacturerRadiator)TempData.Peek("manufacturerRadiator")).ManufacturerRadiatorID
+                    materialRadiatorID = Model.MaterialRadiatorID,
+                    manufacturerRadiatorID = Model.ManufacturerRadiatorID
                 });
             }
         </li>

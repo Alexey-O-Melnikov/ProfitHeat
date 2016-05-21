@@ -146,14 +146,13 @@
     <Compile Include="Migrations\201605161616102_AddCladdingType.Designer.cs">
       <DependentUpon>201605161616102_AddCladdingType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605190931045_AddTablePipes.cs" />
-    <Compile Include="Migrations\201605190931045_AddTablePipes.Designer.cs">
-      <DependentUpon>201605190931045_AddTablePipes.cs</DependentUpon>
+    <Compile Include="Migrations\201605210912419_AddPipes.cs" />
+    <Compile Include="Migrations\201605210912419_AddPipes.Designer.cs">
+      <DependentUpon>201605210912419_AddPipes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
     <Compile Include="Plot\Layer.cs" />
-    <Compile Include="Plot\Plot.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
@@ -232,8 +231,8 @@
     <EmbeddedResource Include="Migrations\201605161616102_AddCladdingType.resx">
       <DependentUpon>201605161616102_AddCladdingType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605190931045_AddTablePipes.resx">
-      <DependentUpon>201605190931045_AddTablePipes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605210912419_AddPipes.resx">
+      <DependentUpon>201605210912419_AddPipes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
