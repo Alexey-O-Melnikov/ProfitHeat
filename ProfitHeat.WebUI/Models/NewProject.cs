@@ -9,38 +9,88 @@ namespace ProfitHeat.WebUI.Models
 {
     public class NewProject
     {
-        Project project;
-        public Project GetNewProject(string userID)
+        public Project GetNewProject(ApplicationUser user, ApplicationDbContext db)
         {
-            project = new Project
+            Project project = new Project
             {
-                UserID = userID,
+                ApplicationUser = user,
                 Title = "New",
                 CreateDateTime = DateTime.Now,
-                Location = new Location(),
+                Location = db.Locations.First(), //
                 Rooms = new List<Room>
                     {
                         new Room
                         {
-                            Title = "",
-                            TypeRoom = new TypeRoom(),
+                            Title = "New",
+                            TypeRoom = db.TypesRooms.First(), //
                             Level = 1,
+                            Radiator = db.Radiators.First(),
+                            RadiatorID = db.Radiators.First().RadiatorID,
                             Claddings = new List<Cladding>
                             {
                                 new Wall
                                 {
+                                    Area = 0,
                                     CladdingType = "Стена",
                                     WallLayers = new List<WallLayer>
                                     {
-                                        new WallLayer()
+                                        new WallLayer
+                                        {
+                                            Material = db.Materials.First(), //
+                                            Thickness = 0
+                                        }
+                                    }
+                                },
+                                new Floor
+                                {
+                                    Area = 0,
+                                    CladdingType = "Полы",
+                                    WallLayers = new List<WallLayer>
+                                    {
+                                        new WallLayer
+                                        {
+                                            Material = db.Materials.First(), //
+                                            Thickness = 0
+                                        }
+                                    }
+                                },
+                                new Roof
+                                {
+                                    Area = 0,
+                                    CladdingType = "Потолок",
+                                    WallLayers = new List<WallLayer>
+                                    {
+                                        new WallLayer
+                                        {
+                                            Material = db.Materials.First(), //
+                                            Thickness = 0
+                                        }
+                                    }
+                                },
+                                new Door
+                                {
+                                    Area = 0,
+                                    CladdingType = "Дверь",
+                                    WallLayers = new List<WallLayer>
+                                    {
+                                        new WallLayer
+                                        {
+                                            Material = db.Materials.First(), //
+                                            Thickness = 0
+                                        }
                                     }
                                 }
                             },
                             Windows = new List<Window>
                             {
-                                new Window()
-                            },
-                            Radiator = new Radiator(),
+                                new Window
+                                {
+                                    WindowArea = 0,
+                                    Glass = db.Glasses.First(), //
+                                    GlassArea = 0,
+                                    WindowProfile = db.WindowsProfiles.First(), //
+                                }
+                            }
                         }
                     },
                 Layers = new List<Layer>

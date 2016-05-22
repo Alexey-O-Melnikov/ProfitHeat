@@ -16,8 +16,17 @@ namespace ProfitHeat.WebUI.Controllers
         // GET: Project
         public ActionResult Index(int? projectID)
         {
-            Project project = db.Projects.Find(projectID)
-                ?? new NewProject().GetNewProject(db.Users.First(u => u.UserName == User.Identity.Name).Id);
+            Project project = db.Projects.Find(projectID);
+            if (project == null)
+            {
+                var user = db.Users.First(u => u.UserName == User.Identity.Name);
+                project = new NewProject().GetNewProject(user, db);
+                db.Projects.Add(project);
+                var pr = db.Projects.Where(p => p.Title == "New").FirstOrDefault();
+                if(pr != null)
+                    db.Projects.Remove(pr);
+                db.SaveChanges();
+            }
 
             return View(project);
         }
@@ -56,13 +65,6 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(room);
         }
 
-        public PartialViewResult _EditModelRadiator(string modelRadiator)
-        {
-            var radiator = db.Radiators.Where(x => x.TitleModel == modelRadiator).First();
-
-            return PartialView("_Radiator", radiator);
-        }
-
         public PartialViewResult _Cladding(int? claddingID)
         {
             var cladding = db.Claddings.Find(claddingID);
@@ -87,8 +89,7 @@ namespace ProfitHeat.WebUI.Controllers
         #region Tabular
         public PartialViewResult _Locations(int? locationID)
         {
-            ViewBag.Location = db.Locations.Find(locationID) 
-                ?? new Location { Title = ""};
+            ViewBag.Location = db.Locations.Find(locationID);
             var locations = db.Locations.ToList();
 
             return PartialView(locations);
@@ -105,8 +106,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _TypeRooms(int? typeRoomID)
         {
-            ViewBag.TypeRoom = db.TypesRooms.Find(typeRoomID)
-                ?? new TypeRoom { TitleTypeRoom = "" };
+            ViewBag.TypeRoom = db.TypesRooms.Find(typeRoomID);
             var typeRooms = db.TypesRooms.ToList();
 
             return PartialView(typeRooms);
@@ -114,8 +114,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _ManufacturerRadiators(int? manufacturerRadiatorID)
         {
-            ViewBag.ManufacturerRadiator = db.ManufacturerRadiators.Find(manufacturerRadiatorID)
-                ?? new ManufacturerRadiator { TitleCompany = "" };
+            ViewBag.ManufacturerRadiator = db.ManufacturerRadiators.Find(manufacturerRadiatorID);
             var manufacturerRadiators = db.ManufacturerRadiators.ToList();
 
             return PartialView(manufacturerRadiators);
@@ -123,8 +122,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _MaterialsRadiators(int? materialsRadiatorID)
         {
-            ViewBag.MaterialRadiator = db.MaterialRadiators.Find(materialsRadiatorID)
-                ?? new MaterialRadiator { TitleMaterialRadiator = "" };
+            ViewBag.MaterialRadiator = db.MaterialRadiators.Find(materialsRadiatorID);
             var materialsRadiators = db.MaterialRadiators.ToList();
 
             return PartialView(materialsRadiators);
@@ -132,27 +130,24 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _ModelRadiator(int? radiatorID, int? manufacturerRadiatorID, int? materialRadiatorID)
         {
-            ViewBag.ModelRadiator = db.Radiators.Find(radiatorID) ?? new Radiator { TitleModel = "" };
+            ViewBag.ModelRadiator = db.Radiators.Find(radiatorID);
             var modelRadiators = db.Radiators
                 .Where(x => x.ManufacturerRadiatorID == manufacturerRadiatorID
-                    && x.MaterialRadiatorID == materialRadiatorID).ToList() 
-                    ?? new List<Radiator>();
+                    && x.MaterialRadiatorID == materialRadiatorID).ToList();
 
             return PartialView(modelRadiators);
         }
 
         public ActionResult _Radiator(int? radiatorID)
         {
-            ViewBag.Radiator = db.Radiators.Find(radiatorID)
-                ?? new Radiator { };
+            ViewBag.Radiator = db.Radiators.Find(radiatorID);
             var radiator = db.Radiators.Find(radiatorID);
             return PartialView(radiator);
         }
 
         public PartialViewResult _Glasses(int? glassID)
         {
-            ViewBag.Glass = db.Glasses.Find(glassID)
-                ?? new Glass { Type = "" };
+            ViewBag.Glass = db.Glasses.Find(glassID);
             var glasses = db.Glasses.ToList();
 
             return PartialView(glasses);
@@ -160,8 +155,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _WindowProfiles(int? windowProfileID)
         {
-            ViewBag.WindowProfile = db.WindowsProfiles.Find(windowProfileID)
-                ?? new WindowProfile { TitleMark = "" };
+            ViewBag.WindowProfile = db.WindowsProfiles.Find(windowProfileID);
             var windowProfiles = db.WindowsProfiles.ToList();
 
             return PartialView(windowProfiles);
@@ -169,8 +163,7 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _ManufacturerWindowProfiles(int? manufacturerWindowProfileID)
         {
-            ViewBag.ManufacturerWindowProfile = db.ManufacturerWindowProfiles.Find(manufacturerWindowProfileID)
-                ?? new ManufacturerWindowProfile { TitleCompany = "" };
+            ViewBag.ManufacturerWindowProfile = db.ManufacturerWindowProfiles.Find(manufacturerWindowProfileID);
             var manufacturerWindowProfiles = db.ManufacturerWindowProfiles.ToList();
 
             return PartialView(manufacturerWindowProfiles);

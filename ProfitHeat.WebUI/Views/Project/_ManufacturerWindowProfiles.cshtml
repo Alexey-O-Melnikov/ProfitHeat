@@ -3,7 +3,7 @@
 <div class="@*form-group*@">
     <label for="ManufacturerWindowProfiles">Производитель профиля</label>
     <div class="">
-        <input type="text" list="ManufacturerWindowProfiles" class="form-control" value="@ViewBag.ManufacturerWindowProfile.TitleCompany" />
+        <input id="manufacturerWindowProfil" type="text" list="ManufacturerWindowProfiles" class="form-control" value="@ViewBag.ManufacturerWindowProfile.TitleCompany" />
         <datalist id="ManufacturerWindowProfiles">
             @foreach (var item in Model)
             {
@@ -12,3 +12,11 @@
         </datalist>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#manufacturerWindowProfil').change(function (event) {
+            var url = @Url.Action("_WindowProfiles", "Project");
+            $('#windowProfil').load(url,)
+        })
+    })
+</script>

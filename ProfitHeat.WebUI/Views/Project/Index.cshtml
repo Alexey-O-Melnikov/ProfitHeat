@@ -9,6 +9,12 @@
 <div class="container-fluid">
     <div class="col-lg-3 col-md-4 col-sm-5 ">
         <section id="initialData">
+            <div id="nameProject">
+                @Html.LabelFor(m => m.Title, htmlAttributes: new { @class = "control-label" })
+                <div class="">
+                    @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
             <div id="mainLocation">
                 @{
                     Html.RenderAction("_Locations", new { locationID = Model.LocationID });
