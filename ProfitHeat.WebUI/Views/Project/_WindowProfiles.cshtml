@@ -3,15 +3,15 @@
 @*@{
     Html.RenderPartial("_ManufacturerWindowProfiles", new { manufacturerWindowProfileID = ((ProfitHeat.Domain.WindowProfile)TempData.Peek("WindowProfile")).ManufacturerWindowProfileID });
 }*@
-<div id="windowProfil" class="@*form-group*@">
-    <label for="windowProfiles" class="control-label">Модель профиля</label>
-    <div class="">
-        <input type="text" class="form-control" list="windowProfiles" value="@ViewBag.WindowProfile.TitleMark" />
-        <datalist id="windowProfiles">
-            @foreach (var item in Model)
+    <div id="windowProfil" class="@*form-group*@">
+        <label for="windowProfiles" class="control-label">Модель профиля</label>
+        <div class="">
+            <input type="text" class="form-control" list="windowProfiles" value="@ViewBag.WindowProfile" />
+            <datalist id="windowProfiles">
+                @foreach (var item in Model)
             {
-                <option>@item.TitleMark</option>
-            }
-        </datalist>
+                    <option>@item.TitleMark</option>
+                }
+            </datalist>
+        </div>
     </div>
-</div>

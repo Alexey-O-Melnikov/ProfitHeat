@@ -1,39 +1,36 @@
-﻿//$(document).ready(function () {
-//    $('#manufacturerRadiators').change(function (event) {
-//        //event.preventDefault();
-//        var url = "Project/_ManufacturerRadiators";
-//        $('#privacy').load(url);
-//    });
-//});
+﻿$(document).ready(function () {
 
-//$(document).ready(function () {
-//    $('#radiator').click(function (event) {
-//        event.preventDefault();
-//        var data = $(this).serialize();
-//        var url = $(this).attr('href');
-//        $.post(url, data, function () {
-//            $('#renderRadiator').load(url);
-//        })
-        
-//    });
-//});
+    $('#manufacturerWindowProfil').change(function (event) {
+        event.preventDefault();
+        var url = $(this).attr("data-url");
+        var data = {
+            "manufactProfile": $(this).val(),
+            "winProf": ""
+        };
+        $('#modelWinProf').load(url, data);
+    })
+})
 
-//$(document).ready(function () {
-//    $('#resultLink').click(function (event) {
-//        event.preventDefault();
-//        var url = $(this).attr('href');
-//        $('#result').load(url);
-//    });
-//});
+$(document).ready(function () {
+    $('#materialRadiators').change(function (event) {
+        event.preventDefault();
+        var url = $("#manufacturerRadiators").attr("data-url");
+        var data = {
+            "materialRadiator": $(this).val(),
+            "manufacturerRadiator": ""
+        };
+        $('#manufecRadiator').load(url, data);
 
-//$(function () {
-//    var autocompleteUrl = '@Url.Action("Find")';
-//    $("input#city").autocomplete({
-//        source: autocompleteUrl,
-//        minLength: 2,
-//        select: function (event, ui) {
-//            alert("Selected " + ui.item.label);
-//        }
-//    });
-//});
+        changeManufacturerRadiators();
+    })
+})
 
+function changeManufacturerRadiators(event) {
+    var url = $("#modelRadiator").attr("data-url");
+    var data = {
+        "materialRadiator": $("#materialRadiators").val(),
+        "manufacturerRadiator": $('#manufacturerRadiators').val(),
+        "modelRadiator": ""
+    };
+    $('#modelRadiat').load(url, data);
+}

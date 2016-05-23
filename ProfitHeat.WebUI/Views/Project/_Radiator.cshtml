@@ -8,19 +8,28 @@
             }
         </li>
         <li>
-            @{
-                Html.RenderAction("_ManufacturerRadiators", new { manufacturerRadiatorID = Model.ManufacturerRadiatorID });
-            }
+            <div id="manufecRadiator">
+                @{
+                    Html.RenderAction("_ManufacturerRadiators", new
+                    {
+                        materialRadiator = Model.MaterialRadiator.TitleMaterialRadiator,
+                        manufacturerRadiator = Model.ManufacturerRadiator.TitleCompany
+                    });
+                }
+            </div>
         </li>
         <li>
-            @{
-                Html.RenderAction("_ModelRadiator", new
-                {
-                    radiatorID = Model.RadiatorID,
-                    materialRadiatorID = Model.MaterialRadiatorID,
-                    manufacturerRadiatorID = Model.ManufacturerRadiatorID
-                });
-            }
+            <div id="modelRadiat">
+                @{
+                    Html.RenderAction("_ModelRadiator", new
+                    {
+                        materialRadiator = Model.MaterialRadiator.TitleMaterialRadiator,
+                        manufacturerRadiator = Model.ManufacturerRadiator.TitleCompany,
+                        modelRadiator = Model.TitleModel
+                    });
+                }
+            </div>
         </li>
     </ul>
+
 </div>

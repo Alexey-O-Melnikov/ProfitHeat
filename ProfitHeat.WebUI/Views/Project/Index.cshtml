@@ -33,14 +33,16 @@
             </div>
         </section>
         <hr />
+        @*<button class="btn-danger btn-block btn-lg" id="saveProject" data-url ="@Url.Action("_qwe", "Project")" data-projectId="@Model.ProjectID">Сохранить</button>
+        <br />*@
         @* Должен появлятся после нажатия на кнопку *@
-        @Ajax.ActionLink("------ Рассчитать ------", "_Result", "Project", new { projectID = Model.ProjectID } ,new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "result" }, new { @class = "btn btn-danger", @style = "font-size: 22pt" })
+        @Ajax.ActionLink("Рассчитать", "_Result", "Project", new { projectID = Model.ProjectID } ,new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "result" }, new { @class = "btn btn-success btn-block btn-lg" })
         <hr />
-        <section id="result">
+        <div id="result">
             @*@{
                 Html.RenderAction("_Result", new { projectID = Model.ProjectID });
             }*@
-        </section>
+        </div>
     </div>
     <section id="plot" class="top">
         <div id="buttonsForDrawing">

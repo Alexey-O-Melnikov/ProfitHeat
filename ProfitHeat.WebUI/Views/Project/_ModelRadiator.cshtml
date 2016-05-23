@@ -1,14 +1,12 @@
 ﻿@model List<ProfitHeat.Domain.Radiator>
 
-<div class="form-group">
-    <label for="modelRadiator" class="control-label">Модель радиатора:</label>
-    <div class="">
-        <input id="modelRadiator" type="text" list="modelRadiator" class="form-control" value="@ViewBag.ModelRadiator.TitleModel" />
-        <datalist id="modelRadiator">
-            @foreach (var item in Model)
-            {
-                <option>@item.TitleModel</option>
-            }
-        </datalist>
-    </div>
+<label for="modelRadia" class="control-label">Модель радиатора:</label>
+<div class="">
+    <input id="modelRadiator" type="text" list="modelRadia" class="form-control" value="@ViewBag.ModelRadiator" data-url="@Url.Action("_ModelRadiator", "Project")"/>
+    <datalist id="modelRadia">
+        @foreach (var item in Model)
+        {
+            <option>@item.TitleModel</option>
+        }
+    </datalist>
 </div>

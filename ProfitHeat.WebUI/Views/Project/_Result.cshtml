@@ -1,7 +1,11 @@
-﻿<label for="powerBoiler" class="control-label">Мощность котла</label>
+﻿@*@model ProfitHeat.Domain.Project*@
+
+<label for="powerBoiler" class="control-label">Мощность котла</label>
 <input id="powerBoiler" type="text" class="form-control" value="@ViewBag.PowerBoiler">
+
 <label for="diametrCoolant">Диаметр теплоносителя</label>
 <input id="diametrCoolant" type="text" class="form-control" value="@ViewBag.DiameterCoolant">
+
 <table class="table">
     <thead>
         <tr><td><b>Название комнаты</b></td><td><b>Количество секций</b></td></tr>

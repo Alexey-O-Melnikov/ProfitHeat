@@ -34,12 +34,31 @@
                 @{
                     Html.RenderAction("_ManufacturerWindowProfiles", new { manufacturerWindowProfileID = Model.WindowProfile.ManufacturerWindowProfileID });
                 }
+                @*@Ajax.ActionLink("Выбрать модель профиля", "_WindowProfiles", "Project", new { windowProfileID = Model.WindowProfileID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "modelWinProf" }, new { @class = "btn btn-default" })*@
             </li>
             <li>
-                @{
-                    Html.RenderAction("_WindowProfiles", new { windowProfileID = Model.WindowProfileID });
-                }
+                <div id="modelWinProf">
+                    @{
+                        Html.RenderAction("_WindowProfiles", new
+                        {
+                            windowProfileID = Model.WindowProfileID,
+                            manufactProfile = Model.WindowProfile.ManufacturerWindowProfile.TitleCompany,
+                            winProf = Model.WindowProfile.TitleMark
+                        });
+                    }
+                </div>
             </li>
         </ul>
     </li>
 </ul>
+@*<script>
+    $(document).ready(function () {
+        $("#manufacturerWindowProfil").click(function () {
+            var url = @Url.Action("_WindowProfiles", "Project");
+            var data = {
+                "windowProfileID": @Model.WindowProfileID, 
+                "manufactProfile": $(this).attr('value')};
+            $("#modelWinProf").load(url, data);
+        })
+    });
+</script>*@

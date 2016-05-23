@@ -1,14 +1,12 @@
 ﻿@model List<ProfitHeat.Domain.ManufacturerRadiator>
-<div class="@*form-group*@">
-    <label for="manufacturerRadiators" class="control-label">Производитель:</label>
-    <div class="">
-        <input id="manufacturerRadiators" type="text" list="manufacturerRadiators" class="form-control" 
-               value="@(((ProfitHeat.Domain.ManufacturerRadiator)@TempData.Peek("manufacturerRadiator")).TitleCompany)">
-        <datalist id="manufacturerRadiators">
-            @foreach (var m in Model)
-            {
-                <option>@m.TitleCompany</option>
-            }
-        </datalist>
-    </div>
+<label for="manufacturerRadia" class="control-label">Производитель:</label>
+<div>
+    <input onchange="changeManufacturerRadiators()" id="manufacturerRadiators" type="text" list="manufacturerRadia" class="form-control"
+            value="@ViewBag.ManufacturerRadiator" data-url="@Url.Action("_ManufacturerRadiators", "Project")" />
+    <datalist id="manufacturerRadia">
+        @foreach (var m in Model)
+        {
+            <option>@m.TitleCompany</option>
+        }
+    </datalist>
 </div>
