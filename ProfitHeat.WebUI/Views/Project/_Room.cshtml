@@ -2,9 +2,13 @@
 
 <div id="nameRoom">
     @Html.LabelFor(m => m.Title, htmlAttributes: new { @class = "control-label" })
-    <div class="">
-        @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
-    </div>
+    <input id="titleRoom" type="text" class="form-control" value="@Model.Title" />
+</div>
+<div id="levelRoom">
+@Html.LabelFor(m => m.Level, htmlAttributes: new { @class = "control-label" })
+<div class="">
+    @Html.EditorFor(m => m.Level, new { htmlAttributes = new { @class = "form-control" } })
+</div>
 </div>
 
 @{
@@ -26,6 +30,11 @@
 @{
     Html.RenderAction("_Window", new { windowID = Model.Windows.First().WindowID });
 }
+<br />
+@Ajax.ActionLink("Сохранить параметры комнаты", "_Room", "Project", new { projectID = Model.ProjectID, roomID = 0 }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "room" }, new { @class = "btn btn-info btn-block"@*, @onclick= ""*@ })
+
+
+
 
 @*<label>Окна <b class="caret"></b></label>
 @{ int i = 1; }

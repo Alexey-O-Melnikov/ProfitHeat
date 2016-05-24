@@ -6,8 +6,8 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
-<div class="container-fluid">
-    <div class="col-lg-3 col-md-4 col-sm-5 ">
+<div class="container">
+    <div class="col-lg-4 col-md-5 col-sm-7 col-xs-9">
         <section id="initialData">
             <div id="nameProject">
                 @Html.LabelFor(m => m.Title, htmlAttributes: new { @class = "control-label" })
@@ -20,15 +20,29 @@
                     Html.RenderAction("_Locations", new { locationID = Model.LocationID });
                 }
             </div>
-            <div id="forLevel">
+            @*<div id="forLevel">
                 @{
                     Html.RenderAction("_Layers", new { level = 1 });
                 }
+            </div>*@
+
+            <div id="namesRoomsList" data-projectId="@Model.ProjectID">
+                @{
+                    Html.RenderAction("_ListNameRooms", new
+                    {
+                        projectID = Model.ProjectID,
+                        roomName = Model.Rooms.FirstOrDefault().Title
+                    });
+                }
             </div>
             <hr />
-            <div id="room">
+            <div id="room" data-url="@Url.Action("_Room", "Project")">
                 @{
-                    Html.RenderAction("_Room", new { roomID = Model.Rooms.First().RoomID });
+                    Html.RenderAction("_Room", new
+                    {
+                        projectID = Model.ProjectID,
+                        roomName = Model.Rooms.FirstOrDefault().Title
+                    });
                 }
             </div>
         </section>
@@ -44,7 +58,7 @@
             }*@
         </div>
     </div>
-    <section id="plot" class="top">
+    @*<section id="plot" class="top">
         <div id="buttonsForDrawing">
             <div id="inWallPlot" class="btn">
                 <img src="#" alt="Внешняя стена" />
@@ -64,6 +78,6 @@
                 Браузер не поддерживает canvas
             </canvas>
         </div>
-    </section>
+    </section>*@
 
 </div>

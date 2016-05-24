@@ -2,7 +2,7 @@
 <div class="@*form-group*@">
     <label for="materialRadia" class="control-label">Материал радиатора:</label>
     <div class="">
-        <input id="materialRadiators" type="text" list="materialRadia" class="form-control" 
+        <input onchange="changeMaterialRadiators()" id="materialRadiators" type="text" list="materialRadia" class="form-control" 
                value="@ViewBag.MaterialRadiator.TitleMaterialRadiator">
         <datalist id="materialRadia">
             @foreach (var m in Model)

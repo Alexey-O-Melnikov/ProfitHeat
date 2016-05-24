@@ -1,0 +1,14 @@
+﻿@model List<ProfitHeat.Domain.Room>
+
+<div class="@*form-group*@">
+    <label for="listRooms" class="control-label">Комнаты:</label>
+    <div class="">
+        <input onchange="changeListRoomsName()" id="listRoomsName" type="text" list="listRooms" class="form-control" value="@ViewBag.Room" data-url="@Url.Action("_ListNameRooms", "Project")"/>
+        <datalist id="listRooms">
+            @foreach (var m in Model)
+            {
+                <option>@m.Title</option>
+            }
+        </datalist>
+    </div>
+</div>

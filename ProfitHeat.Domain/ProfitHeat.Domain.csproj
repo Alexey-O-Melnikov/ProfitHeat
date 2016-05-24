@@ -150,6 +150,10 @@
     <Compile Include="Migrations\201605210912419_AddPipes.Designer.cs">
       <DependentUpon>201605210912419_AddPipes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605241047141_DelPlots.cs" />
+    <Compile Include="Migrations\201605241047141_DelPlots.Designer.cs">
+      <DependentUpon>201605241047141_DelPlots.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
     <Compile Include="Plot\Layer.cs" />
@@ -233,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605210912419_AddPipes.resx">
       <DependentUpon>201605210912419_AddPipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605241047141_DelPlots.resx">
+      <DependentUpon>201605241047141_DelPlots.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,7 +2,7 @@
 <div class="@*form-group*@">
     <label for="countCameras" class="control-label">Количество камер</label>
     <div class="">
-        <input id="countCamer" type="text" list="countCameras" class="form-control" value="@ViewBag.CountCameras" />
+        <input onchange="changeCountCameras()" id="countCamer" type="text" list="countCameras" class="form-control" value="@ViewBag.CountCameras" />
         <datalist id="countCameras">
             @foreach (var item in Model)
             {

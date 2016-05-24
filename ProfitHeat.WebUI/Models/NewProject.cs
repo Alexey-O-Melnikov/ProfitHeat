@@ -9,24 +9,16 @@ namespace ProfitHeat.WebUI.Models
 {
     public class NewProject
     {
-        public Project GetNewProject(ApplicationUser user, ApplicationDbContext db)
+        public Room GetNewRoom(ApplicationDbContext db, string roomName)
         {
-            Project project = new Project
+            Room room = new Room
             {
-                ApplicationUser = user,
-                Title = "New",
-                CreateDateTime = DateTime.Now,
-                Location = db.Locations.First(), //
-                Rooms = new List<Room>
-                    {
-                        new Room
-                        {
-                            Title = "New",
-                            TypeRoom = db.TypesRooms.First(), //
-                            Level = 1,
-                            Radiator = db.Radiators.First(),
-                            RadiatorID = db.Radiators.First().RadiatorID,
-                            Claddings = new List<Cladding>
+                Title = roomName,
+                TypeRoom = db.TypesRooms.First(), //
+                Level = 1,
+                Radiator = db.Radiators.First(),
+                RadiatorID = db.Radiators.First().RadiatorID,
+                Claddings = new List<Cladding>
                             {
                                 new Wall
                                 {
@@ -81,7 +73,7 @@ namespace ProfitHeat.WebUI.Models
                                     }
                                 }
                             },
-                            Windows = new List<Window>
+                Windows = new List<Window>
                             {
                                 new Window
                                 {
@@ -91,15 +83,21 @@ namespace ProfitHeat.WebUI.Models
                                     WindowProfile = db.WindowsProfiles.First(), //
                                 }
                             }
-                        }
-                    },
-                Layers = new List<Layer>
+            };
+
+            return room;
+        }
+        public Project GetNewProject(ApplicationUser user, ApplicationDbContext db)
+        {
+            Project project = new Project
+            {
+                ApplicationUser = user,
+                Title = "New",
+                CreateDateTime = DateTime.Now,
+                Location = db.Locations.First(), //
+                Rooms = new List<Room>
                     {
-                        new Layer
-                        {
-                            LayerNumber = 1,
-                            Items = new List<Item>()
-                        }
+                        GetNewRoom(db, "New")
                     }
             };
 

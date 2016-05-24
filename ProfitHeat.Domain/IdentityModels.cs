@@ -41,8 +41,8 @@ namespace ProfitHeat.Domain
         public virtual DbSet<WallLayer> WallLayers { get; set; }
         //Plot
         //public virtual DbSet<Plot> Plots { get; set; }
-        public virtual DbSet<Layer> Layers { get; set; }
-        public virtual DbSet<Item> Items { get; set; }
+        //public virtual DbSet<Layer> Layers { get; set; }
+        //public virtual DbSet<Item> Items { get; set; }
         //Tabular
         public virtual DbSet<Glass> Glasses { get; set; }
         public virtual DbSet<WindowProfile> WindowsProfiles { get; set; }

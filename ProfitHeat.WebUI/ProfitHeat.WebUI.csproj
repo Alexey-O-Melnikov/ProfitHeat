@@ -370,6 +370,7 @@
     <Content Include="Views\Project\_CountCameras.cshtml" />
     <Content Include="Views\Project\_DistanceBetweenGlasses.cshtml" />
     <Content Include="Views\Project\_TypeGlasses.cshtml" />
+    <Content Include="Views\Project\_ListNameRooms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

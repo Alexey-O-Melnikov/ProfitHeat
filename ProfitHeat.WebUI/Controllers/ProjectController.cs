@@ -50,25 +50,32 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView();
         }
 
-        public PartialViewResult _Level(int? level)
+        public PartialViewResult _ListNameRooms(int? projectID, string roomName)
         {
-            ViewBag.Level = level;
-            var layers = db.Layers.ToList();
+            ViewBag.Room = roomName;
+            var rooms = db.Rooms.Where(r => r.ProjectID == projectID).ToList();
 
-            return PartialView(layers);
+            return PartialView(rooms);
         }
 
-        public PartialViewResult _Layers(int? level)
-        {
-            ViewBag.Layer = db.Layers.Where(x => x.LayerNumber == level).First();
-            var layers = db.Layers.ToList();
+        //public PartialViewResult _Layers(int? level)
+        //{
+        //    ViewBag.Layer = db.Layers.Where(x => x.LayerNumber == level).First();
+        //    var layers = db.Layers.ToList();
 
-            return PartialView(layers);
-        }
+        //    return PartialView(layers);
+        //}
 
-        public PartialViewResult _Room(int roomID = 0)
+
+        public PartialViewResult _Room(int? projectID, string roomName)
         {
-            var room = db.Rooms.Find(roomID); 
+            var room = db.Rooms.Where(r => r.Title == roomName).FirstOrDefault();
+            if (room == null)
+            {
+                room = new NewProject().GetNewRoom(db, roomName);
+                db.Projects.Find(projectID).Rooms.Add(room);
+                db.SaveChanges();
+            }
 
             return PartialView(room);
         }
@@ -139,7 +146,6 @@ namespace ProfitHeat.WebUI.Controllers
                 if (temp == null)
                     manufacturerRadiators.Add(radiator.ManufacturerRadiator);
             }
-            //var manufacturerRadiators = db.ManufacturerRadiators.Where(m => m.).ToList();
 
             return PartialView(manufacturerRadiators);
         }

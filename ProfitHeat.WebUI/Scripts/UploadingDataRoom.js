@@ -1,16 +1,14 @@
-﻿$(document).ready(function () {
-    $('#countCamer').change(function (event) {
-        event.preventDefault();
-        var url = $("#distanceBetweenGlas").attr("data-url");
-        var data = {
-            "countCameras": $(this).val(),
-            "distanceBetweenGlasses": ""
-        };
-        $('#distanceBetweenG').load(url, data);
+﻿function changeCountCameras() {
+    event.preventDefault();
+    var url = $("#distanceBetweenGlas").attr("data-url");
+    var data = {
+        "countCameras": $('#countCamer').val(),
+        "distanceBetweenGlasses": ""
+    };
+    $('#distanceBetweenG').load(url, data);
 
-        changeDistanceBetweenGlasses();
-    })
-})
+    changeDistanceBetweenGlasses();
+}
 
 function changeDistanceBetweenGlasses(event) {
     var url = $("#typeGlas").attr("data-url");
@@ -22,31 +20,25 @@ function changeDistanceBetweenGlasses(event) {
     $('#typeG').load(url, data);
 }
 
-$(document).ready(function () {
-    $('#manufacturerWindowProfil').change(function (event) {
-        event.preventDefault();
-        var url = $(this).attr("data-url");
-        var data = {
-            "manufactProfile": $(this).val(),
-            "winProf": ""
-        };
-        $('#modelWinProf').load(url, data);
-    })
-})
+function changeManufacturerWindowProfiles() {
+    var url = $('#manufacturerWindowProfil').attr("data-url");
+    var data = {
+        "manufactProfile": $('#manufacturerWindowProfil').val(),
+        "winProf": ""
+    };
+    $('#modelWinProf').load(url, data);
+}
 
-$(document).ready(function () {
-    $('#materialRadiators').change(function (event) {
-        event.preventDefault();
-        var url = $("#manufacturerRadiators").attr("data-url");
-        var data = {
-            "materialRadiator": $(this).val(),
-            "manufacturerRadiator": ""
-        };
-        $('#manufecRadiator').load(url, data);
+function changeMaterialRadiators() {
+    var url = $("#manufacturerRadiators").attr("data-url");
+    var data = {
+        "materialRadiator": $('#materialRadiators').val(),
+        "manufacturerRadiator": ""
+    };
+    $('#manufecRadiator').load(url, data);
 
-        changeManufacturerRadiators();
-    })
-})
+    changeManufacturerRadiators();
+}
 
 function changeManufacturerRadiators(event) {
     var url = $("#modelRadiator").attr("data-url");
@@ -58,3 +50,30 @@ function changeManufacturerRadiators(event) {
     $('#modelRadiat').load(url, data);
 }
 
+//function clickToSaveRoom() {
+//    var url = $("#listRoomsName").attr("data-url");
+//    var data = {
+//        "projectID": $("#namesRoomsList").attr("data-projectId"),
+//        "roomName": $('#titleRoom').val()
+//    };
+//    $('#namesRoomsList').load(url, data);
+//}
+
+function changeListRoomsName() {
+    var url = $("#room").attr("data-url");
+    var data = {
+        "projectID": $("#namesRoomsList").attr("data-projectId"),
+        "roomName": $("#listRoomsName").val()
+    };
+    $('#room').load(url, data);
+    addRoom();
+}
+
+function addRoom() {
+    var url = $("#listRoomsName").attr("data-url");
+    var data = {
+        "projectID": $("#namesRoomsList").attr("data-projectId"),
+        "roomName": $("#listRoomsName").val()
+    };
+    $('#namesRoomsList').load(url, data);
+}
