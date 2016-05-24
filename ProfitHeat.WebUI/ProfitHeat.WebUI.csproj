@@ -367,6 +367,9 @@
     <Content Include="Views\Radiators\Index.cshtml" />
     <Content Include="Views\Project\_Result.cshtml" />
     <Content Include="Views\Project\_Layers.cshtml" />
+    <Content Include="Views\Project\_CountCameras.cshtml" />
+    <Content Include="Views\Project\_DistanceBetweenGlasses.cshtml" />
+    <Content Include="Views\Project\_TypeGlasses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

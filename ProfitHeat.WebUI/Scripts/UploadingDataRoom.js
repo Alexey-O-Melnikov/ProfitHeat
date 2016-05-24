@@ -1,5 +1,28 @@
 ﻿$(document).ready(function () {
+    $('#countCamer').change(function (event) {
+        event.preventDefault();
+        var url = $("#distanceBetweenGlas").attr("data-url");
+        var data = {
+            "countCameras": $(this).val(),
+            "distanceBetweenGlasses": ""
+        };
+        $('#distanceBetweenG').load(url, data);
 
+        changeDistanceBetweenGlasses();
+    })
+})
+
+function changeDistanceBetweenGlasses(event) {
+    var url = $("#typeGlas").attr("data-url");
+    var data = {
+        "countCameras": $("#countCamer").val(),
+        "distanceBetweenGlasses": $("#distanceBetweenGlas").val(),
+        "typeGlasses": ""
+    };
+    $('#typeG').load(url, data);
+}
+
+$(document).ready(function () {
     $('#manufacturerWindowProfil').change(function (event) {
         event.preventDefault();
         var url = $(this).attr("data-url");
@@ -34,3 +57,4 @@ function changeManufacturerRadiators(event) {
     };
     $('#modelRadiat').load(url, data);
 }
+

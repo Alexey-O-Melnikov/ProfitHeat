@@ -1,14 +1,32 @@
-﻿@model List<ProfitHeat.Domain.Glass>
-
-<div class="@*form-group*@">
-    <label for="glasses" class="control-label">Тип стеклопакета</label>
-    <div class="">
-        <input type="text" list="glasses"  class="form-control" value="@ViewBag.Glass.Type" />
-        <datalist id="glasses">
-            @foreach (var item in Model)
+﻿@model ProfitHeat.Domain.Glass
+<li>
+    @{
+        Html.RenderAction("_CountCameras", new
+        {
+            countCameras = Model.CountCamera
+        });
+    }
+</li>
+<li>
+    <div id="distanceBetweenG">
+        @{
+            Html.RenderAction("_DistanceBetweenGlasses", new
             {
-                <option>@item.Type</option>
-            }
-        </datalist>
+                countCameras = Model.CountCamera,
+                distanceBetweenGlasses = Model.DistanceBetweenGlasses
+            });
+        }
     </div>
-</div>
+</li>
+<li>
+    <div id="typeG">
+        @{
+            Html.RenderAction("_TypeGlasses", new
+            {
+                countCameras = Model.CountCamera,
+                distanceBetweenGlasses = Model.DistanceBetweenGlasses,
+                typeGlasses = Model.Type
+            });
+        }
+    </div>
+</li>

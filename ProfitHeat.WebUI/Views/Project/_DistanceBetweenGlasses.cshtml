@@ -1,0 +1,13 @@
+﻿@model List<int>
+<div class="@*form-group*@">
+    <label for="distanceBetweenGlasses" class="control-label">Расстояние между стеклами</label>
+    <div class="">
+        <input onchange="changeDistanceBetweenGlasses()" id="distanceBetweenGlas" type="text" list="distanceBetweenGlasses" class="form-control" value="@ViewBag.DistanceBetweenGlass" data-url="@Url.Action("_DistanceBetweenGlasses", "Project")"/>
+        <datalist id="distanceBetweenGlasses">
+            @foreach (var item in Model)
+            {
+                <option>@item</option>
+            }
+        </datalist>
+    </div>
+</div>

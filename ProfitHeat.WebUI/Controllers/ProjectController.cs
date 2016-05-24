@@ -163,8 +163,42 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _Glasses(int? glassID)
         {
-            ViewBag.Glass = db.Glasses.Find(glassID);
-            var glasses = db.Glasses.ToList();
+            var glass = db.Glasses.Find(glassID);
+
+            return PartialView(glass);
+        }
+
+        public PartialViewResult _CountCameras(int? countCameras)
+        {
+            ViewBag.CountCameras = countCameras;
+            List<int> countsCameras = new List<int>();
+            foreach (var glass in db.Glasses)
+            {
+                if (countsCameras.Where(x => x == glass.CountCamera).Count() == 0)
+                    countsCameras.Add(glass.CountCamera);
+            }
+
+            return PartialView(countsCameras);
+        }
+
+        public PartialViewResult _DistanceBetweenGlasses(int? countCameras, int? distanceBetweenGlasses)
+        {
+            ViewBag.DistanceBetweenGlass = distanceBetweenGlasses;
+            List<int> distancesBetweenGlasses = new List<int>();
+            var glasses = db.Glasses.Where(g => g.CountCamera == countCameras);
+            foreach (var glass in glasses)
+            {
+                if (distancesBetweenGlasses.Where(x => x == glass.DistanceBetweenGlasses).Count() == 0)
+                    distancesBetweenGlasses.Add(glass.DistanceBetweenGlasses);
+            }
+
+            return PartialView(distancesBetweenGlasses);
+        }
+
+        public PartialViewResult _TypeGlasses(int? countCameras, int? distanceBetweenGlasses, string typeGlasses)
+        {
+            ViewBag.TypeGlasses = typeGlasses;
+            var glasses = db.Glasses.Where(g => g.CountCamera == countCameras && g.DistanceBetweenGlasses == distanceBetweenGlasses).ToList();
 
             return PartialView(glasses);
         }

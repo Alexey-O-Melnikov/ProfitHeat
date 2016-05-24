@@ -12,11 +12,9 @@
     <li>
         @Html.LabelFor(m => m.Glass, htmlAttributes: new { @class = "control-label" }) <b class="caret"></b>
         <ul>
-            <li>
-                @{
-                    Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
-                }
-            </li>
+            @{
+                Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
+            }
             <li>
                 <div class="@*form-group*@">
                     @Html.LabelFor(model => model.GlassArea, htmlAttributes: new { @class = "control-label" })
