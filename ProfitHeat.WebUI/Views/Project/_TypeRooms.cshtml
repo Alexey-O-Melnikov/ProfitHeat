@@ -3,7 +3,7 @@
 <div class="@*form-group*@">
     <label for="typeRooms" class="control-label">Тип комнаты:</label>
     <div class="">
-        <input type="text" list="typeRooms" class="form-control" value="@ViewBag.TypeRoom.TitleTypeRoom">
+        <input onchange="saveEntity('RoomTitle', 'RoomType')" id="RoomType" type="text" list="typeRooms" class="form-control" value="@ViewBag.TypeRoom.TitleTypeRoom" />
         <datalist id="typeRooms">
             @foreach (var m in Model)
             {

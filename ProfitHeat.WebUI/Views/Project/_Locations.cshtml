@@ -2,7 +2,7 @@
 <div class="@*form-group*@">
     <label for="locations" class="control-label">Город</label>
     <div class="">
-        <input type="text" list="locations" class="form-control" value="@ViewBag.Location.Title">
+        <input onchange="saveEntity('ProjectTitle', 'LocationTitle')" id="LocationTitle" list="locations" type="text" class="form-control" value="@ViewBag.Location.Title" />
         <datalist id="locations">
             @foreach (var m in Model)
             {

@@ -1,200 +1,144 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="ProfitHeat.Domain.Ceiling" Collapsed="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
-    <InheritanceLine Type="ProfitHeat.Domain.Cladding" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="8.5" Y="2.25" />
-        <Point X="8.5" Y="1.566" />
-        <Point X="3.375" Y="1.566" />
-        <Point X="3.375" Y="1.191" />
-      </Path>
-    </InheritanceLine>
+  <Class Name="ProfitHeat.Domain.Cladding" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Cladding\Ceiling.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProfitHeat.Domain.Cladding">
-    <Position X="7.75" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAACIAAAAAAAAAAAAAAAAAEAAAAAAAAABQAAAAA=</HashCode>
+      <HashCode>AAAAAAACoAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAA=</HashCode>
       <FileName>Cladding\Cladding.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="WallLayer" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ProfitHeat.Domain.Door" Collapsed="true">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cladding\Door.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProfitHeat.Domain.Floor" Collapsed="true">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cladding\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ProfitHeat.Domain.Roof" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cladding\Roof.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="ProfitHeat.Domain.Wall" Collapsed="true">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cladding\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.WallLayer">
-    <Position X="5" Y="2.25" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.WallLayer" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAABBAAAAAAAAAAAAAAAAAAAAAAADAAAAAA=</HashCode>
       <FileName>Cladding\WallLayer.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Material1" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="ProfitHeat.Domain.Window">
-    <Position X="10.25" Y="5.5" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Window" Collapsed="true">
+    <Position X="6.5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAABCAAAAAABAAAAAAAAAIABIAAAAAAAAAAQgAAA=</HashCode>
+      <HashCode>AAIAAAACAAAAAABAAAAAAAAAIABIAAAAAAAAAAQgAAA=</HashCode>
       <FileName>Cladding\Window.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Glass1" />
-      <Property Name="WindowProfile1" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="ProfitHeat.Domain.Item">
-    <Position X="14.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAyCAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
-      <FileName>Plot\Item.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProfitHeat.Domain.Layer">
-    <Position X="14.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AACAAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAAAAAAQIA=</HashCode>
-      <FileName>Plot\Layer.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Item" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="ProfitHeat.Domain.Plot">
-    <Position X="14.75" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AACAAAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIA=</HashCode>
-      <FileName>Plot\Plot.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Layer" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="ProfitHeat.Domain.Location">
-    <Position X="12.75" Y="7.5" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Location" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
       <FileName>Tabular\Location.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.Material">
-    <Position X="2.5" Y="2.25" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Material" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>Tabular\Material.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.ManufacturerRadiator">
-    <Position X="2.75" Y="4.25" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Pipe" Collapsed="true">
+    <Position X="9" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabular\Pipe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProfitHeat.Domain.ManufacturerRadiator" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tabular\Radiator\ManufacturerRadiator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.MaterialRadiator">
-    <Position X="4.5" Y="5.5" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.MaterialRadiator" Collapsed="true">
+    <Position X="0.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tabular\Radiator\MaterialRadiator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.Radiator">
-    <Position X="7.5" Y="4.5" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Radiator" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AGAAgAAAASAAAAAAAgAAgAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAAgAAAASAAAAAAAgAAgAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Tabular\Radiator\Radiator.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ManufacturerRadiator1" />
-      <Property Name="MaterialRadiator" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="ProfitHeat.Domain.TypeRoom">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.TypeRoom" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AUAAAAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Tabular\TypeRoom.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.Glass">
-    <Position X="8.25" Y="8" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Glass" Collapsed="true">
+    <Position X="9" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAQACAAAAgAA=</HashCode>
       <FileName>Tabular\Window\Glass.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.ManufacturerWindowProfile">
-    <Position X="3" Y="7.5" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.ManufacturerWindowProfile" Collapsed="true">
+    <Position X="2.75" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tabular\Window\ManufacturerWindowProfile.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProfitHeat.Domain.WindowProfile">
-    <Position X="6" Y="7" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.WindowProfile" Collapsed="true">
+    <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAgCAAAAAABAAAAACAAEAIAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAgCAAAAAABAAAAACAAEAAAAgAA=</HashCode>
       <FileName>Tabular\Window\WindowProfile.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ManufacturerWindowProfile1" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="ProfitHeat.Domain.Project">
-    <Position X="12.5" Y="4.25" Width="1.5" />
+  <Class Name="ProfitHeat.Domain.Project" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAACAAAAEAAABIAAAACRAAAAAAAAAAEAAAAAIA=</HashCode>
+      <HashCode>AAAAAAAACAAAAEAQAAIAAAgCRAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Project.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Location1" />
-      <Property Name="Room" />
-      <Property Name="Plot1" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="ProfitHeat.Domain.Room">
-    <Position X="10" Y="2.25" Width="1.5" />
-    <AssociationLine Name="TypeRoom1" Type="ProfitHeat.Domain.TypeRoom" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.5" Y="3.469" />
-        <Point X="13" Y="3.469" />
-        <Point X="13" Y="2.18" />
-      </Path>
-    </AssociationLine>
+  <Class Name="ProfitHeat.Domain.Room" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEBAAAACAAAAAEAAAAAAAAAABEAAAQARABAACAAAAAA=</HashCode>
+      <HashCode>AEBAAAACAAAAAEAAAAAAAAAABEAAAQARABAAAAAAAAA=</HashCode>
       <FileName>Room.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Window" />
-      <Property Name="Radiator1" />
-      <Property Name="TypeRoom1" />
-      <Property Name="Cladding" />
-    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProfitHeat.Domain.ApplicationUser" Collapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ApplicationUser.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

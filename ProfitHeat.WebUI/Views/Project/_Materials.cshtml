@@ -1,9 +1,12 @@
 ﻿@model List<ProfitHeat.Domain.Material>
-
+@{ 
+    string layerId = ViewBag.LayerID + "LayerMaterial";
+    string layerThicknessId = ViewBag.LayerID + "LayerThickness";
+}
 <div class="@*form-group*@">
     <label for="materials" class="control-label">Материал:</label>
     <div class="">
-        <input type="text" list="materials" class="form-control" value="@ViewBag.Material.Title" />
+        <input onchange="saveEntity('@layerThicknessId', '@layerId')" id="@layerId" type="text" class="form-control" list="materials" value="@ViewBag.Material.Title" />
         <datalist id="materials">
             @foreach (var m in Model)
             {

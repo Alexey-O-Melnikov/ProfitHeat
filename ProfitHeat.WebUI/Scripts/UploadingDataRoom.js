@@ -21,12 +21,12 @@ function changeDistanceBetweenGlasses(event) {
 }
 
 function changeManufacturerWindowProfiles() {
-    var url = $('#manufacturerWindowProfil').attr("data-url");
+    var url = $(manufacturerWindowProfil).attr("data-url");
     var data = {
-        "manufactProfile": $('#manufacturerWindowProfil').val(),
+        "manufactProfile": $(manufacturerWindowProfil).val(),
         "winProf": ""
     };
-    $('#modelWinProf').load(url, data);
+    $(modelWinProf).load(url, data);
 }
 
 function changeMaterialRadiators() {
@@ -50,15 +50,6 @@ function changeManufacturerRadiators(event) {
     $('#modelRadiat').load(url, data);
 }
 
-//function clickToSaveRoom() {
-//    var url = $("#listRoomsName").attr("data-url");
-//    var data = {
-//        "projectID": $("#namesRoomsList").attr("data-projectId"),
-//        "roomName": $('#titleRoom').val()
-//    };
-//    $('#namesRoomsList').load(url, data);
-//}
-
 function changeListRoomsName() {
     var url = $("#room").attr("data-url");
     var data = {
@@ -76,4 +67,46 @@ function addRoom() {
         "roomName": $("#listRoomsName").val()
     };
     $('#namesRoomsList').load(url, data);
+}
+
+function saveEntity(entityId, inputId) {
+    var url = $("#nameProject").attr("data-url");
+    var data = {
+        "entity": inputId.replace(/[0-9]/g, ''),
+        "id": $("#"+entityId).attr("data-id"),
+        "value": $("#"+inputId).val()
+    };
+    $('#result').load(url, data);
+}
+
+function saveWindowProfile() {
+    var url = $("#window").attr("data-url");
+    var data = {
+        "windowID": $("#WindowArea").attr("data-id"),
+        "model": $("#WindowProfileModel").val(),
+        "manufect": $("#manufacturerWindowProfil").val()
+    };
+    $('#result').load(url, data);
+}
+
+function saveWindowGlass() {
+    var url = $("#glass").attr("data-url");
+    var data = {
+        "windowID": $("#WindowArea").attr("data-id"),
+        "glassType": $("#typeGlas").val(),
+        "camerasCount": $("#countCamer").val(),
+        "distanc": $("#distanceBetweenGlas").val()
+    };
+    $('#result').load(url, data);
+}
+
+function saveRadiator() {
+    var url = $("#radiator").attr("data-url");
+    var data = {
+        "roomID": $("#RoomTitle").attr("data-id"),
+        "model": $("#modelRadiator").val(),
+        "material": $("#materialRadiators").val(),
+        "manufect": $("#manufacturerRadiators").val()
+    };
+    $('#result').load(url, data);
 }

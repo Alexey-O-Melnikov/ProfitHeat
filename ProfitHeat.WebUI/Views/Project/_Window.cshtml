@@ -2,25 +2,20 @@
 
 <ul>
     <li>
-        <div class="@*form-group*@">
-            @Html.LabelFor(model => model.WindowArea, htmlAttributes: new { @class = "control-label" })
-            <div class="">
-                @Html.EditorFor(model => model.WindowArea, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
+        <div id="window" data-url="@Url.Action("SaveWindowProfile", "Project")">
+            <input onchange="saveEntity('WindowArea', 'WindowArea')" id="WindowArea" type="text" class="form-control" value="@Model.WindowArea" data-id="@Model.WindowID" />
         </div>
     </li>
     <li>
         @Html.LabelFor(m => m.Glass, htmlAttributes: new { @class = "control-label" }) <b class="caret"></b>
-        <ul>
+        <ul id="glass" data-url="@Url.Action("SaveGlass", "Project")">
             @{
                 Html.RenderAction("_Glasses", new { glassID = Model.GlassID });
             }
             <li>
                 <div class="@*form-group*@">
                     @Html.LabelFor(model => model.GlassArea, htmlAttributes: new { @class = "control-label" })
-                    <div class="">
-                        @Html.EditorFor(model => model.GlassArea, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
+                    <input onchange="saveEntity('WindowArea', 'GlassArea')" id="GlassArea" type="text" class="form-control" value="@Model.GlassArea" />
                 </div>
             </li>
         </ul>

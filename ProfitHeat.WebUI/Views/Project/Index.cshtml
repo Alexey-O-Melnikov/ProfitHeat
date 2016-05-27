@@ -9,11 +9,9 @@
 <div class="container">
     <div class="col-lg-4 col-md-5 col-sm-7 col-xs-9">
         <section id="initialData">
-            <div id="nameProject">
+            <div id="nameProject" data-url="@Url.Action("SaveEntity", "Project")">
                 @Html.LabelFor(m => m.Title, htmlAttributes: new { @class = "control-label" })
-                <div class="">
-                    @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+                <input onchange="saveEntity('ProjectTitle', 'ProjectTitle')" id="ProjectTitle" type="text" class="form-control" value="@Model.Title" data-id="@Model.ProjectID"/>
             </div>
             <div id="mainLocation">
                 @{
@@ -26,7 +24,7 @@
                 }
             </div>*@
 
-            <div id="namesRoomsList" data-projectId="@Model.ProjectID">
+            <div id="namesRoomsList" data-projectId="@Model.ProjectID" data-url="@Url.Action("_ListNameRooms", "Project")">
                 @{
                     Html.RenderAction("_ListNameRooms", new
                     {
@@ -47,10 +45,10 @@
             </div>
         </section>
         <hr />
-        @*<button class="btn-danger btn-block btn-lg" id="saveProject" data-url ="@Url.Action("_qwe", "Project")" data-projectId="@Model.ProjectID">Сохранить</button>
-        <br />*@
+        <button onclick="saveChange()" class="btn btn-success btn-block btn-lg" id="saveProject" data-url ="@Url.Action("_Result", "Project")" data-projectId="@Model.ProjectID">Подобрать отопительную систему</button>
+        <br />
         @* Должен появлятся после нажатия на кнопку *@
-        @Ajax.ActionLink("Рассчитать", "_Result", "Project", new { projectID = Model.ProjectID } ,new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "result" }, new { @class = "btn btn-success btn-block btn-lg" })
+        @*@Ajax.ActionLink("Рассчитать", "_Result", "Project", new { projectID = Model.ProjectID } ,new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "result" }, new { @class = "btn btn-success btn-block btn-lg" })*@
         <hr />
         <div id="result">
             @*@{

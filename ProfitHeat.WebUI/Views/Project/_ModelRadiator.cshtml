@@ -2,7 +2,7 @@
 
 <label for="modelRadia" class="control-label">Модель радиатора:</label>
 <div class="">
-    <input id="modelRadiator" type="text" list="modelRadia" class="form-control" value="@ViewBag.ModelRadiator" data-url="@Url.Action("_ModelRadiator", "Project")"/>
+    <input onchange="saveRadiator()" id="modelRadiator" type="text" list="modelRadia" class="form-control" value="@ViewBag.ModelRadiator" data-url="@Url.Action("_ModelRadiator", "Project")"/>
     <datalist id="modelRadia">
         @foreach (var item in Model)
         {

@@ -69,6 +69,7 @@
     <Compile Include="Cladding\Roof.cs" />
     <Compile Include="Cladding\Wall.cs" />
     <Compile Include="Cladding\WallLayer.cs" />
+    <Compile Include="ApplicationUser.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201604231123027_AddedLazyLoading.cs" />
     <Compile Include="Migrations\201604231123027_AddedLazyLoading.Designer.cs">
@@ -153,6 +154,10 @@
     <Compile Include="Migrations\201605241047141_DelPlots.cs" />
     <Compile Include="Migrations\201605241047141_DelPlots.Designer.cs">
       <DependentUpon>201605241047141_DelPlots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605261126155_AddColNumLayer.cs" />
+    <Compile Include="Migrations\201605261126155_AddColNumLayer.Designer.cs">
+      <DependentUpon>201605261126155_AddColNumLayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plot\Item.cs" />
@@ -240,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605241047141_DelPlots.resx">
       <DependentUpon>201605241047141_DelPlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261126155_AddColNumLayer.resx">
+      <DependentUpon>201605261126155_AddColNumLayer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

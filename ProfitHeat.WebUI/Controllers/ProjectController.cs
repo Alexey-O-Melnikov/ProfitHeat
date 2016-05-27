@@ -38,7 +38,7 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(project);
         }
 
-        public PartialViewResult _Result(int? projectID)
+        public PartialViewResult _Result(int? projectID, string titleProject, string titleLocation)
         {
             CalculationHeatingSystem calc = new CalculationHeatingSystem(projectID);
 
@@ -87,9 +87,23 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(cladding);
         }
 
-        public PartialViewResult _WallLayer(int? wallLayerID)
+        public PartialViewResult _WallLayer(int? claddingID, int? wallLayerID)
         {
-            var wallLayer = db.WallLayers.Find(wallLayerID) ?? new WallLayer();
+            
+            var wallLayer = db.WallLayers.Find(wallLayerID);
+            if(wallLayer == null)
+            {
+                wallLayer = new WallLayer
+                {
+                    Material = db.Materials.First(),
+                    CladdingID = (int)claddingID,
+                    Thickness = 0,
+                    NumLayer = db.Claddings.Find(claddingID)
+                        .WallLayers.OrderByDescending(w => w.NumLayer).First().NumLayer + 1
+                };
+                db.WallLayers.Add(wallLayer);
+                db.SaveChanges();
+            }
 
             return PartialView(wallLayer);
         }
@@ -110,8 +124,9 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(locations);
         }
 
-        public PartialViewResult _Materials(int? materialID)
+        public PartialViewResult _Materials(int? materialID, int? layerID)
         {
+            ViewBag.LayerID = layerID;
             ViewBag.Material = db.Materials.Find(materialID) 
                 ?? new Material { Title = "" };
             var materials = db.Materials.ToList();
@@ -226,5 +241,37 @@ namespace ProfitHeat.WebUI.Controllers
         }
         #endregion
 
+        #region SaveData
+        public void SaveEntity(string entity, int? id, string value)
+        {
+            new SaveData(db).Save(entity, id, value);
+        }
+
+        public void SaveRadiator(int? roomID, string model, string material, string manufect)
+        {
+            string radiatorID = db.Radiators.First(r => r.TitleModel == model
+                && r.MaterialRadiator.TitleMaterialRadiator == material
+                && r.ManufacturerRadiator.TitleCompany == manufect).RadiatorID.ToString();
+
+            new SaveData(db).Save("Radiator", roomID, radiatorID);
+        }
+
+        public void SaveGlass(int? windowID, string glassType, int camerasCount, int distanc)
+        {
+            string glassID = db.Glasses.First(g => g.Type == glassType
+                && g.CountCamera == camerasCount
+                && g.DistanceBetweenGlasses == distanc).GlassID.ToString();
+
+            new SaveData(db).Save("Glass", windowID, glassID);
+        }
+
+        public void SaveWindowProfile(int? windowID, string model, string manufect)
+        {
+            string profileID = db.WindowsProfiles.First(p => p.TitleMark == model
+                && p.ManufacturerWindowProfile.TitleCompany == manufect).WindowProfileID.ToString();
+
+            new SaveData(db).Save("WindowProfile", windowID, profileID);
+        }
+        #endregion
     }
 }

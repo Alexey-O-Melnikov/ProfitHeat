@@ -1,18 +1,19 @@
 ﻿@model ProfitHeat.Domain.WallLayer
+@{
+    string layerID = Model.WallLayerID + "LayerThickness";
+}
 <li>
-    <label class="control-label">Слой <b class="caret"></b></label>
+    <label class="control-label">Слой №@Model.NumLayer <b class="caret"></b></label>
     <ul>
         <li>
             @{
-                Html.RenderAction("_Materials", new { materialID = Model.MaterialID });
+                Html.RenderAction("_Materials", new { materialID = Model.MaterialID, layerID = Model.WallLayerID });
             }
         </li>
         <li>
             <div class="@*form-group*@">
                 @Html.LabelFor(model => model.Thickness, htmlAttributes: new { @class = "control-label" })
-                <div class="">
-                    @Html.EditorFor(model => model.Thickness, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+                <input onchange="saveEntity('@layerID', '@layerID')" id="@layerID" type="text" class="form-control" value="@Model.Thickness" data-id="@Model.WallLayerID" />
             </div>
         </li>
     </ul>

@@ -172,11 +172,11 @@
     <Compile Include="Controllers\Admin\Radiator\MaterialRadiatorsController.cs" />
     <Compile Include="Controllers\Admin\Radiator\RadiatorsController.cs" />
     <Compile Include="Controllers\Admin\TypeRoomsController.cs" />
-    <Compile Include="Controllers\Admin\Window\GlassesController.cs" />
     <Compile Include="Controllers\Admin\LocationsController.cs" />
     <Compile Include="Controllers\Admin\MaterialsController.cs" />
     <Compile Include="Controllers\Admin\Window\ManufacturerWindowProfilesController.cs" />
     <Compile Include="Controllers\Admin\Window\WindowProfilesController.cs" />
+    <Compile Include="Controllers\Admin\Window\GlassesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -187,6 +187,7 @@
     <Compile Include="Models\CalculationHeatingSystem.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewProject.cs" />
+    <Compile Include="Models\SaveData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -315,11 +316,6 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Glasses\Create.cshtml" />
-    <Content Include="Views\Glasses\Delete.cshtml" />
-    <Content Include="Views\Glasses\Details.cshtml" />
-    <Content Include="Views\Glasses\Edit.cshtml" />
-    <Content Include="Views\Glasses\Index.cshtml" />
     <Content Include="Views\WindowProfiles\Create.cshtml" />
     <Content Include="Views\WindowProfiles\Delete.cshtml" />
     <Content Include="Views\WindowProfiles\Details.cshtml" />
@@ -371,6 +367,11 @@
     <Content Include="Views\Project\_DistanceBetweenGlasses.cshtml" />
     <Content Include="Views\Project\_TypeGlasses.cshtml" />
     <Content Include="Views\Project\_ListNameRooms.cshtml" />
+    <Content Include="Views\Glasses\Create.cshtml" />
+    <Content Include="Views\Glasses\Delete.cshtml" />
+    <Content Include="Views\Glasses\Details.cshtml" />
+    <Content Include="Views\Glasses\Edit.cshtml" />
+    <Content Include="Views\Glasses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

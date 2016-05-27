@@ -29,7 +29,8 @@ namespace ProfitHeat.WebUI.Models
                                         new WallLayer
                                         {
                                             Material = db.Materials.First(), //
-                                            Thickness = 0
+                                            Thickness = 0,
+                                            NumLayer = 1
                                         }
                                     }
                                 },
@@ -42,7 +43,8 @@ namespace ProfitHeat.WebUI.Models
                                         new WallLayer
                                         {
                                             Material = db.Materials.First(), //
-                                            Thickness = 0
+                                            Thickness = 0,
+                                            NumLayer = 1
                                         }
                                     }
                                 },
@@ -55,7 +57,8 @@ namespace ProfitHeat.WebUI.Models
                                         new WallLayer
                                         {
                                             Material = db.Materials.First(), //
-                                            Thickness = 0
+                                            Thickness = 0,
+                                            NumLayer = 1
                                         }
                                     }
                                 },
@@ -68,7 +71,8 @@ namespace ProfitHeat.WebUI.Models
                                         new WallLayer
                                         {
                                             Material = db.Materials.First(), //
-                                            Thickness = 0
+                                            Thickness = 0,
+                                            NumLayer = 1
                                         }
                                     }
                                 }

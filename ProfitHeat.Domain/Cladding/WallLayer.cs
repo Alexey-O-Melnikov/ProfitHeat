@@ -21,5 +21,6 @@ namespace ProfitHeat.Domain
         [DisplayName("Толщина слоя")]
         [Required(ErrorMessage = "Укажите толщину слоя")]
         public double Thickness { get; set; }
+        public int NumLayer { get; set; }
     }
 }

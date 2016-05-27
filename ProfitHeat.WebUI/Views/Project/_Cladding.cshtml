@@ -1,25 +1,24 @@
 ﻿@model ProfitHeat.Domain.Cladding
+@{
+    string str = "newWallLayer" + Model.CladdingType;
+    string claddingId = Model.CladdingID + "CladdingArea";
+}
 <label>@Model.CladdingType <b class="caret"></b></label>
 <ul>
     <li>
         <div class="@*form-group*@">
             @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label" })
-            <div class="">
-                @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
+            <input onchange="saveEntity('@claddingId', '@claddingId')" id="@claddingId" type="text" class="form-control" value="@Model.Area"data-id="@Model.CladdingID" />
         </div>
     </li>
-    @{
-        string str = "newWallLayer" + Model.CladdingType;
-    }
     @foreach (var item in Model.WallLayers)
     {
         Html.RenderAction("_WallLayer", new { wallLayerID = item.WallLayerID });
     }
-    <li id=@str>
+    <div id=@str>
         <br />
-        @Ajax.ActionLink("Добавить новый слой", "_WallLayer", "Project", new { wallLayerID = 0 }, new AjaxOptions { InsertionMode = InsertionMode.InsertBefore, UpdateTargetId = str }, new { @class = "btn btn-default btn-block" })
-    </li>
+        @Ajax.ActionLink("Добавить новый слой", "_WallLayer", "Project", new { wallLayerID = 0, claddingID = Model.CladdingID }, new AjaxOptions { InsertionMode = InsertionMode.InsertBefore, UpdateTargetId = str }, new { @class = "btn btn-default btn-block" })
+    </div>
 
 </ul>
 
