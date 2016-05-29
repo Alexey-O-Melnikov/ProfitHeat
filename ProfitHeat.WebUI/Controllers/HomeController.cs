@@ -25,15 +25,7 @@ namespace ProfitHeat.WebUI.Controllers
                 ViewBag.UserID = DbContext. Users.First(u => u.UserName == userName).Id;
             return View(DbContext.Projects.ToList());
         }
-        //////////////////////////////////////////////////////////////////////
-        public ActionResult InfoProject(int i = 12)
-        {
-            return PartialView(i);
-        }
 
-
-
-        //////////////////////////////////////////////////////////////////////
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

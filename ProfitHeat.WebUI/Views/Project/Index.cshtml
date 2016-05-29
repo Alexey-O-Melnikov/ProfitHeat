@@ -18,12 +18,6 @@
                     Html.RenderAction("_Locations", new { locationID = Model.LocationID });
                 }
             </div>
-            @*<div id="forLevel">
-                @{
-                    Html.RenderAction("_Layers", new { level = 1 });
-                }
-            </div>*@
-
             <div id="namesRoomsList" data-projectId="@Model.ProjectID" data-url="@Url.Action("_ListNameRooms", "Project")">
                 @{
                     Html.RenderAction("_ListNameRooms", new
@@ -44,17 +38,12 @@
                 }
             </div>
         </section>
+
         <hr />
         <button onclick="saveChange()" class="btn btn-success btn-block btn-lg" id="saveProject" data-url ="@Url.Action("_Result", "Project")" data-projectId="@Model.ProjectID">Подобрать отопительную систему</button>
-        <br />
-        @* Должен появлятся после нажатия на кнопку *@
-        @*@Ajax.ActionLink("Рассчитать", "_Result", "Project", new { projectID = Model.ProjectID } ,new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "result" }, new { @class = "btn btn-success btn-block btn-lg" })*@
         <hr />
-        <div id="result">
-            @*@{
-                Html.RenderAction("_Result", new { projectID = Model.ProjectID });
-            }*@
-        </div>
+        <div id="result"></div>
+
     </div>
     @*<section id="plot" class="top">
         <div id="buttonsForDrawing">
@@ -77,5 +66,4 @@
             </canvas>
         </div>
     </section>*@
-
 </div>

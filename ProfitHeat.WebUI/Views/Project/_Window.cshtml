@@ -27,7 +27,6 @@
                 @{
                     Html.RenderAction("_ManufacturerWindowProfiles", new { manufacturerWindowProfileID = Model.WindowProfile.ManufacturerWindowProfileID });
                 }
-                @*@Ajax.ActionLink("Выбрать модель профиля", "_WindowProfiles", "Project", new { windowProfileID = Model.WindowProfileID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "modelWinProf" }, new { @class = "btn btn-default" })*@
             </li>
             <li>
                 <div id="modelWinProf">
@@ -44,14 +43,3 @@
         </ul>
     </li>
 </ul>
-@*<script>
-    $(document).ready(function () {
-        $("#manufacturerWindowProfil").click(function () {
-            var url = @Url.Action("_WindowProfiles", "Project");
-            var data = {
-                "windowProfileID": @Model.WindowProfileID, 
-                "manufactProfile": $(this).attr('value')};
-            $("#modelWinProf").load(url, data);
-        })
-    });
-</script>*@

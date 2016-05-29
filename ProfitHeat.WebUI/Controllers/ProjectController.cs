@@ -12,7 +12,6 @@ namespace ProfitHeat.WebUI.Controllers
     public class ProjectController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-
         // GET: Project
         public ActionResult Index(int? projectID)
         {
@@ -22,9 +21,6 @@ namespace ProfitHeat.WebUI.Controllers
                 var user = db.Users.First(u => u.UserName == User.Identity.Name);
                 project = new NewProject().GetNewProject(user, db);
                 db.Projects.Add(project);
-                //var pr = db.Projects.Where(p => p.Title == "New").FirstOrDefault();
-                //if(pr != null)
-                //    db.Projects.Remove(pr);
                 db.SaveChanges();
             }
 
@@ -38,14 +34,13 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(project);
         }
 
-        public PartialViewResult _Result(int? projectID, string titleProject, string titleLocation)
+        public PartialViewResult _Result(int? projectID)
         {
             CalculationHeatingSystem calc = new CalculationHeatingSystem(projectID);
 
             ViewBag.PowerBoiler = calc.PowerBoiler;
             ViewBag.DiameterCoolant = calc.DiameterCoolant;
             ViewBag.Radiators = calc.Radiators;
-            //var project = db.Projects.Find(projectID);
 
             return PartialView();
         }
@@ -57,15 +52,6 @@ namespace ProfitHeat.WebUI.Controllers
 
             return PartialView(rooms);
         }
-
-        //public PartialViewResult _Layers(int? level)
-        //{
-        //    ViewBag.Layer = db.Layers.Where(x => x.LayerNumber == level).First();
-        //    var layers = db.Layers.ToList();
-
-        //    return PartialView(layers);
-        //}
-
 
         public PartialViewResult _Room(int? projectID, string roomName)
         {
@@ -114,6 +100,10 @@ namespace ProfitHeat.WebUI.Controllers
 
             return PartialView(window);
         }
+
+
+
+
 
         #region Tabular
         public PartialViewResult _Locations(int? locationID)
@@ -241,6 +231,10 @@ namespace ProfitHeat.WebUI.Controllers
         }
         #endregion
 
+
+
+
+
         #region SaveData
         public void SaveEntity(string entity, int? id, string value)
         {
@@ -273,5 +267,13 @@ namespace ProfitHeat.WebUI.Controllers
             new SaveData(db).Save("WindowProfile", windowID, profileID);
         }
         #endregion
+         protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

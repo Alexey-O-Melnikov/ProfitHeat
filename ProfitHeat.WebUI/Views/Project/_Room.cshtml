@@ -17,7 +17,6 @@
     Html.RenderAction("_Radiator", new { radiatorID = Model.RadiatorID });
 }
 
-
 <br />
 @foreach (var cladding in Model.Claddings)
 {
@@ -28,21 +27,3 @@
 @{
     Html.RenderAction("_Window", new { windowID = Model.Windows.First().WindowID });
 }
-@*<br />
-@Ajax.ActionLink("Сохранить параметры комнаты", "_Room", "Project", new { projectID = Model.ProjectID, roomID = 0 }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "room" }, new { @class = "btn btn-info btn-block", @onclick= "" })*@
-
-
-
-
-@*<label>Окна <b class="caret"></b></label>
-@{ int i = 1; }
-<ul>
-    @foreach (var window in Model.Windows)
-    {
-        @:<li>
-            Html.RenderAction("_Window", new { windowID = window.WindowID, i = i });
-        @:</li>
-        i++;
-    }
-</ul>*@
-

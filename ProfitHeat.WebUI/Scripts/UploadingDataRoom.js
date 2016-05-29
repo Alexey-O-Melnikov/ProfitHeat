@@ -1,4 +1,12 @@
-﻿function changeCountCameras() {
+﻿function saveChange() {
+    var url = $("#saveProject").attr("data-url");
+    var data = {
+        "projectID": $("#saveProject").attr("data-projectId"),
+    };
+    $("#result").load(url, data);
+}
+
+function changeCountCameras() {
     event.preventDefault();
     var url = $("#distanceBetweenGlas").attr("data-url");
     var data = {

@@ -130,34 +130,5 @@ namespace ProfitHeat.WebUI.Models
             db.Windows.Find(windowID).WindowProfileID = windowProfileID;
             db.SaveChanges();
         }
-
-
-
-        public void SaveRoom(
-            ApplicationDbContext db,
-            int? projectID,
-            string titleProject,
-            string titleLocation,
-            string titleRoom,
-            string level,
-            string typeRoom,
-            string materRadiator,
-            string manufecRadiator,
-            string modelRadiator,
-            string areaWall,
-            string areaFloor,
-            string areaRoof,
-            string areaDoor,
-            string areaWindow,
-            string countCamer,
-            string distancGlass,
-            string typeGlass,
-            string areaGlass,
-            string manufProfil,
-            string modelProfil
-            )
-        {
-
-        }
     }
 }
