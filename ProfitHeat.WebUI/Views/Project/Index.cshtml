@@ -6,7 +6,7 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
-<div class="container">
+<div class="container-fluid">
     <div class="col-lg-4 col-md-5 col-sm-7 col-xs-9">
         <section id="initialData">
             <div id="nameProject" data-url="@Url.Action("SaveEntity", "Project")">
@@ -40,11 +40,17 @@
         </section>
 
         <hr />
-        <button onclick="saveChange()" class="btn btn-success btn-block btn-lg" id="saveProject" data-url ="@Url.Action("_Result", "Project")" data-projectId="@Model.ProjectID">Подобрать отопительную систему</button>
+        <button onclick="saveChange()" class="btn btn-success btn-lg" id="saveProject" data-url ="@Url.Action("_Result", "Project")" data-projectId="@Model.ProjectID">Подобрать отопительную систему</button>
         <hr />
         <div id="result"></div>
 
     </div>
+    <div class="col-lg-8 col-md-7">
+        <canvas id="canvas" width="3942" , height="2628">
+            Браузер не поддерживает canvas
+        </canvas>
+    </div>
+
     @*<section id="plot" class="top">
         <div id="buttonsForDrawing">
             <div id="inWallPlot" class="btn">
