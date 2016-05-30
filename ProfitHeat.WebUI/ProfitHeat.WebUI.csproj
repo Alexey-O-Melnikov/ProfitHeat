@@ -375,6 +375,7 @@
     <Content Include="Views\Glasses\Details.cshtml" />
     <Content Include="Views\Glasses\Edit.cshtml" />
     <Content Include="Views\Glasses\Index.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

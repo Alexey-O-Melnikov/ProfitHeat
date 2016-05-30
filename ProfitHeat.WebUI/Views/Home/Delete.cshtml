@@ -1,0 +1,19 @@
+﻿@model ProfitHeat.Domain.Project
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>@Model.Title - @Model.Location.Title - @Model.CreateDateTime.ToString("dd MMMM, yyyyг.")</h2>
+
+<h3>Вы точно хотите удалить этот проект?</h3>
+<div>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-danger" /> |
+            @Html.ActionLink("Назад к списку проектов", "Index")
+        </div>
+    }
+</div>
