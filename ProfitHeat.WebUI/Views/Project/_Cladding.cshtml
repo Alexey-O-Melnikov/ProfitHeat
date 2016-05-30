@@ -3,24 +3,27 @@
     string str = "newWallLayer" + Model.CladdingType;
     string claddingId = Model.CladdingID + "CladdingArea";
 }
-<label>@Model.CladdingType <b class="caret"></b></label>
-<ul>
-    <li>
-        <div class="@*form-group*@">
-            @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label" })
-            <input onchange="saveEntity('@claddingId', '@claddingId')" id="@claddingId" type="text" class="form-control" value="@Model.Area"data-id="@Model.CladdingID" />
+<div id="cladding">
+    <label>@Model.CladdingType <b class="caret"></b></label>
+    <ul>
+        <li>
+            <div class="@*form-group*@">
+                @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label" })
+                <input onchange="saveEntity('@claddingId', '@claddingId')" id="@claddingId" type="text" class="form-control" value="@Model.Area" data-id="@Model.CladdingID" />
+            </div>
+        </li>
+        <div id=@str>
+            @foreach (var item in Model.WallLayers)
+            {
+                Html.RenderAction("_WallLayer", new { wallLayerID = item.WallLayerID });
+            }
         </div>
-    </li>
-    @foreach (var item in Model.WallLayers)
-    {
-        Html.RenderAction("_WallLayer", new { wallLayerID = item.WallLayerID });
-    }
-    <div id=@str>
-        <br />
-        @Ajax.ActionLink("Добавить новый слой", "_WallLayer", "Project", new { wallLayerID = 0, claddingID = Model.CladdingID }, new AjaxOptions { InsertionMode = InsertionMode.InsertBefore, UpdateTargetId = str }, new { @class = "btn btn-default btn-block" })
-    </div>
+        <div >
+            <br />
+            @Ajax.ActionLink("Добавить новый слой", "_WallLayer", "Project", new { wallLayerID = 0, claddingID = Model.CladdingID }, new AjaxOptions { InsertionMode = InsertionMode.InsertBefore, UpdateTargetId = str }, new { @class = "btn btn-default btn-block" })
+        </div>
 
-</ul>
-
+    </ul>
+</div>
 
 

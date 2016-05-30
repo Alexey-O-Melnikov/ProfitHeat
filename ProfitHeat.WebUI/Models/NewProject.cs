@@ -28,7 +28,7 @@ namespace ProfitHeat.WebUI.Models
                                     {
                                         new WallLayer
                                         {
-                                            Material = db.Materials.First(), //
+                                            Material = db.Materials.First(),
                                             Thickness = 0,
                                             NumLayer = 1
                                         }
@@ -42,7 +42,7 @@ namespace ProfitHeat.WebUI.Models
                                     {
                                         new WallLayer
                                         {
-                                            Material = db.Materials.First(), //
+                                            Material = db.Materials.First(),
                                             Thickness = 0,
                                             NumLayer = 1
                                         }
@@ -56,7 +56,7 @@ namespace ProfitHeat.WebUI.Models
                                     {
                                         new WallLayer
                                         {
-                                            Material = db.Materials.First(), //
+                                            Material = db.Materials.First(),
                                             Thickness = 0,
                                             NumLayer = 1
                                         }
@@ -70,7 +70,7 @@ namespace ProfitHeat.WebUI.Models
                                     {
                                         new WallLayer
                                         {
-                                            Material = db.Materials.First(), //
+                                            Material = db.Materials.First(),
                                             Thickness = 0,
                                             NumLayer = 1
                                         }
@@ -82,7 +82,7 @@ namespace ProfitHeat.WebUI.Models
                                 new Window
                                 {
                                     WindowArea = 0,
-                                    Glass = db.Glasses.First(), //
+                                    Glass = db.Glasses.First(), //z
                                     GlassArea = 0,
                                     WindowProfile = db.WindowsProfiles.First(), //
                                 }

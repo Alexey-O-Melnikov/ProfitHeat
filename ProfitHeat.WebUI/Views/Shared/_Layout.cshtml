@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – ProfitHeat</title>
@@ -24,6 +24,24 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("О программе", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Редактирование <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Радиаторы", "Index", "Radiators")</li>
+                                <li>@Html.ActionLink("Материалы радиаторов", "Index", "MaterialRadiators")</li>
+                                <li>@Html.ActionLink("Производители радиаторов", "Index", "ManufacturerRadiators")</li>
+                                <li>@Html.ActionLink("Стеклопакеты", "Index", "Glasses")</li>
+                                <li>@Html.ActionLink("Профили окон", "Index", "WindowProfiles")</li>
+                                <li>@Html.ActionLink("Производители профилей", "Index", "ManufacturerWindowProfiles")</li>
+                                <li>@Html.ActionLink("Регионы расположения", "Index", "Locations")</li>
+                                <li>@Html.ActionLink("Материалы", "Index", "Materials")</li>
+                                <li>@Html.ActionLink("Типы комнат", "Index", "TypeRooms")</li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -45,15 +63,15 @@
     @RenderSection("scripts", required: false)
 
     @*<script>
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            $('#modelRadiator').change(
-                $("#radiator").load(
-                    @Url.Action("_EditModelRadiator", "Project"),
-                    "modelRadiator" =  $(this).attr(data-model)
-                    ));
+                $('#modelRadiator').change(
+                    $("#radiator").load(
+                        @Url.Action("_EditModelRadiator", "Project"),
+                        "modelRadiator" =  $(this).attr(data-model)
+                        ));
 
-        });
-    </script>*@
+            });
+        </script>*@
 </body>
 </html>

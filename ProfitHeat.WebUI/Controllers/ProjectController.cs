@@ -66,16 +66,21 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView(room);
         }
 
-        public PartialViewResult _Cladding(int? claddingID)
+        public PartialViewResult _Cladding(int? claddingID, int? wallLayerID)
         {
             var cladding = db.Claddings.Find(claddingID);
+            if (wallLayerID != null)
+            {
+                var wallLayer = db.WallLayers.Find(wallLayerID);
+                db.WallLayers.Remove(wallLayer);
+                db.SaveChanges();
+            }
 
             return PartialView(cladding);
         }
 
         public PartialViewResult _WallLayer(int? claddingID, int? wallLayerID)
         {
-            
             var wallLayer = db.WallLayers.Find(wallLayerID);
             if(wallLayer == null)
             {
@@ -84,8 +89,8 @@ namespace ProfitHeat.WebUI.Controllers
                     Material = db.Materials.First(),
                     CladdingID = (int)claddingID,
                     Thickness = 0,
-                    NumLayer = db.Claddings.Find(claddingID)
-                        .WallLayers.OrderByDescending(w => w.NumLayer).First().NumLayer + 1
+                    NumLayer = /*db.Claddings.Find(claddingID)
+                        .WallLayers.OrderByDescending(w => w.NumLayer).First().NumLayer + */1
                 };
                 db.WallLayers.Add(wallLayer);
                 db.SaveChanges();
