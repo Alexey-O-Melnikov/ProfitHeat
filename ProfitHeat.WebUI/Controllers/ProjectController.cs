@@ -143,7 +143,7 @@ namespace ProfitHeat.WebUI.Controllers
         public PartialViewResult _ManufacturerRadiators(string materialRadiator, string manufacturerRadiator)
         {
             ViewBag.ManufacturerRadiator = manufacturerRadiator;
-            var radiators = db.Radiators.Where(r => r.MaterialRadiator.TitleMaterialRadiator == materialRadiator);
+            var radiators = db.Radiators.Where(r => r.MaterialRadiator.TitleMaterialRadiator == materialRadiator).ToList();
             var manufacturerRadiators = new List<ManufacturerRadiator>();
             foreach (var radiator in radiators)
             {
