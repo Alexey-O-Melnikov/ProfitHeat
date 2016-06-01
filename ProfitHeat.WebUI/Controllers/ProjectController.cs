@@ -22,6 +22,7 @@ namespace ProfitHeat.WebUI.Controllers
                 project = new NewProject().GetNewProject(user, db);
                 db.Projects.Add(project);
                 db.SaveChanges();
+                db.Dispose();
             }
 
             return View(project);
@@ -55,12 +56,13 @@ namespace ProfitHeat.WebUI.Controllers
 
         public PartialViewResult _Room(int? projectID, string roomName)
         {
-            var room = db.Rooms.Where(r => r.Title == roomName).FirstOrDefault();
+            var room = db.Rooms.Where(r => r.Title == roomName && r.ProjectID == projectID).FirstOrDefault();
             if (room == null)
             {
                 room = new NewProject().GetNewRoom(db, roomName);
                 db.Projects.Find(projectID).Rooms.Add(room);
                 db.SaveChanges();
+                db.Dispose();
             }
 
             return PartialView(room);
@@ -74,6 +76,7 @@ namespace ProfitHeat.WebUI.Controllers
                 var wallLayer = db.WallLayers.Find(wallLayerID);
                 db.WallLayers.Remove(wallLayer);
                 db.SaveChanges();
+                db.Dispose();
             }
 
             return PartialView(cladding);
@@ -94,6 +97,7 @@ namespace ProfitHeat.WebUI.Controllers
                 };
                 db.WallLayers.Add(wallLayer);
                 db.SaveChanges();
+                db.Dispose();
             }
 
             return PartialView(wallLayer);

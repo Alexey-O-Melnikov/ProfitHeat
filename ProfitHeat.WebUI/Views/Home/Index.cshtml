@@ -31,24 +31,20 @@
             </table>*@
         @foreach (var project in Model)
         {
-            if (ViewBag.UserID == project.UserID)
-            {
-
-                <table class="form-group">
-                    <tr >
-                        <td >
-                            @Html.ActionLink(
-                                project.Title + " - " +
-                                project.Location.Title + " - " +
-                                project.CreateDateTime.ToString("dd MMMM, yyyyг."),
-                                "Index", "Project", new { projectID = project.ProjectID }, htmlAttributes: new { @class = "btn btn-default" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Удалить", "Delete", new { id = project.ProjectID }, htmlAttributes: new { @class = "btn btn-info,  bottom-right"})
-                        </td>
-                    </tr>
-                </table>
-            }
+            <table class="form-group">
+                <tr >
+                    <td >
+                        @Html.ActionLink(
+                            project.Title + " - " +
+                            project.Location.Title + " - " +
+                            project.CreateDateTime.ToString("dd MMMM, yyyyг."),
+                            "Index", "Project", new { projectID = project.ProjectID }, htmlAttributes: new { @class = "btn btn-default" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Удалить", "Delete", new { id = project.ProjectID }, htmlAttributes: new { @class = "btn btn-info,  bottom-right"})
+                    </td>
+                </tr>
+            </table>
         }
     </div>
 </div>

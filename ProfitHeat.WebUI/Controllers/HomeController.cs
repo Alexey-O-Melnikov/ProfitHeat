@@ -17,15 +17,17 @@ namespace ProfitHeat.WebUI.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            ApplicationDbContext DbContext = new ApplicationDbContext();
 
             //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(DbContext));
             //userManager.AddToRole(DbContext.Users.First(u => u.UserName == "1@1.ru").Id, "admin");
 
             string userName = User.Identity.Name;
+            string userID = "";
             if (!String.IsNullOrWhiteSpace(userName))
-                ViewBag.UserID = DbContext. Users.First(u => u.UserName == userName).Id;
-            return View(DbContext.Projects.ToList());
+                userID = db.Users.First(u => u.UserName == userName).Id;
+            var projects = db.Projects.Where(p => p.UserID == userID).ToList();
+
+            return View(projects);
         }
 
         public ActionResult About()
