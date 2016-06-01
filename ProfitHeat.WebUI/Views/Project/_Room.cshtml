@@ -2,7 +2,7 @@
 
 <div id="nameRoom">
     @Html.LabelFor(m => m.Title, htmlAttributes: new { @class = "control-label" })
-    <input onchange="saveEntity('RoomTitle', 'RoomTitle')" id="RoomTitle" type="text" class="form-control" value="@Model.Title" data-id="@Model.RoomID"/>
+    <input onchange="saveEntity('RoomTitle', 'RoomTitle')" id="RoomTitle" type="text" class="form-control" value="@Model.Title" data-id="@Model.RoomID" />
 </div>
 <div id="levelRoom">
     @Html.LabelFor(m => m.Level, htmlAttributes: new { @class = "control-label" })
@@ -16,11 +16,10 @@
 @{
     Html.RenderAction("_Radiator", new { radiatorID = Model.RadiatorID });
 }
-
 <br />
 @foreach (var cladding in Model.Claddings)
 {
-    Html.RenderAction("_Cladding", new { claddingID = cladding.CladdingID });
+        Html.RenderAction("_Cladding", new { claddingID = cladding.CladdingID });
 }
 
 @Html.LabelFor(m => m.Windows, htmlAttributes: new { @class = "control-label" }) <b class="caret"></b>

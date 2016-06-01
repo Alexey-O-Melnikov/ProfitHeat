@@ -1,11 +1,12 @@
 ﻿@model ProfitHeat.Domain.WallLayer
 @{
     string layerID = Model.WallLayerID + "LayerThickness";
+    string claddinrId = "cladding" + Model.CladdingID;
 }
 <li>
     <div class="">
         <label class="control-label">Слой <b class="caret"></b></label>
-        @Ajax.ActionLink("Удалить", "_Cladding", new { claddingID = Model.CladdingID, wallLayerID = Model.WallLayerID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "cladding" }, new { @class = "btn btn-info,  bottom-right" } )
+        @Ajax.ActionLink("Удалить", "_Cladding", new { claddingID = Model.CladdingID, wallLayerID = Model.WallLayerID }, new AjaxOptions { InsertionMode = InsertionMode.ReplaceWith, UpdateTargetId = claddinrId }, new { @class = "btn btn-info,  bottom-right" } )
     </div>
     <ul>
         <li>

@@ -2,8 +2,9 @@
 @{
     string str = "newWallLayer" + Model.CladdingType;
     string claddingId = Model.CladdingID + "CladdingArea";
+    string claddinrId = "cladding" + Model.CladdingID;
 }
-<div id="cladding">
+<div id="@claddinrId">
     <label>@Model.CladdingType <b class="caret"></b></label>
     <ul>
         <li>
@@ -18,12 +19,11 @@
                 Html.RenderAction("_WallLayer", new { wallLayerID = item.WallLayerID });
             }
         </div>
-        <div >
+        <div>
             <br />
             @Ajax.ActionLink("Добавить новый слой", "_WallLayer", "Project", new { wallLayerID = 0, claddingID = Model.CladdingID }, new AjaxOptions { InsertionMode = InsertionMode.InsertBefore, UpdateTargetId = str }, new { @class = "btn btn-default " })
         </div>
 
     </ul>
 </div>
-
 
