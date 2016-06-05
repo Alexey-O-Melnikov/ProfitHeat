@@ -23,7 +23,7 @@
                     Html.RenderAction("_ListNameRooms", new
                     {
                         projectID = Model.ProjectID,
-                        roomName = Model.Rooms.FirstOrDefault().Title
+                        roomID = Model.Rooms.FirstOrDefault().RoomID
                     });
                 }
             </div>
@@ -33,7 +33,7 @@
                     Html.RenderAction("_Room", new
                     {
                         projectID = Model.ProjectID,
-                        roomName = Model.Rooms.FirstOrDefault().Title
+                        roomID = Model.Rooms.FirstOrDefault().RoomID
                     });
                 }
             </div>

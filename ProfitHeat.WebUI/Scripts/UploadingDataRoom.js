@@ -62,17 +62,32 @@ function changeListRoomsName() {
     var url = $("#room").attr("data-url");
     var data = {
         "projectID": $("#namesRoomsList").attr("data-projectId"),
-        "roomName": $("#listRoomsName").val()
+        "roomID": $("#listRoomsName").val()
     };
     $('#room').load(url, data);
-    addRoom();
 }
 
 function addRoom() {
-    var url = $("#listRoomsName").attr("data-url");
+    var url = $("#room").attr("data-url");
     var data = {
         "projectID": $("#namesRoomsList").attr("data-projectId"),
-        "roomName": $("#listRoomsName").val()
+        "roomID": 0
+    };
+    $('#room').load(url, data);
+
+    changeTitleRoom();
+}
+
+function deletRoom() {
+
+}
+
+function changeTitleRoom() {
+    var url = $("#dropDownListRooms").attr("data-url");
+    var data = {
+        "projectID": $("#namesRoomsList").attr("data-projectId"),
+        "roomID": 0,
+        "roomTitle": $("#RoomTitle").val()
     };
     $('#namesRoomsList').load(url, data);
 }
@@ -85,6 +100,10 @@ function saveEntity(entityId, inputId) {
         "value": $("#"+inputId).val()
     };
     $('#result').load(url, data);
+
+    if (inputId == "RoomTitle") {
+        changeTitleRoom();
+    }
 }
 
 function saveWindowProfile() {

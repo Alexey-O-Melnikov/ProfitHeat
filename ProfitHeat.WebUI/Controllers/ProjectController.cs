@@ -45,20 +45,22 @@ namespace ProfitHeat.WebUI.Controllers
             return PartialView();
         }
 
-        public PartialViewResult _ListNameRooms(int? projectID, string roomName)
+        public PartialViewResult _ListNameRooms(int? projectID, int? roomID, string roomTitle)
         {
-            ViewBag.Room = roomName;
             var rooms = db.Rooms.Where(r => r.ProjectID == projectID).ToList();
+            var room = db.Rooms.Find(roomID) ?? db.Rooms.Where(r => r.ProjectID == projectID && r.Title == roomTitle).FirstOrDefault();
+
+            ViewBag.RoomID = new SelectList(rooms, "RoomID", "Title", room);
 
             return PartialView(rooms);
         }
 
-        public PartialViewResult _Room(int? projectID, string roomName)
+        public PartialViewResult _Room(int? projectID, int? roomID)
         {
-            var room = db.Rooms.Where(r => r.Title == roomName && r.ProjectID == projectID).FirstOrDefault();
+            var room = db.Rooms.Find(roomID);
             if (room == null)
             {
-                room = new NewProject().GetNewRoom(db, roomName);
+                room = new NewProject().GetNewRoom(db, "New");
                 db.Projects.Find(projectID).Rooms.Add(room);
                 db.SaveChanges();
             }

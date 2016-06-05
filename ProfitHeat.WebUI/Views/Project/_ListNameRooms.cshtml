@@ -2,7 +2,7 @@
 
 <div class="@*form-group*@">
     <label for="listRooms" class="control-label">Комнаты:</label>
-    <div class="">
+    @*<div class="">
         <input onchange="changeListRoomsName()" id="listRoomsName" type="text" list="listRooms" class="form-control" value="@ViewBag.Room" data-url="@Url.Action("_ListNameRooms", "Project")"/>
         <datalist id="listRooms">
             @foreach (var m in Model)
@@ -10,5 +10,9 @@
                 <option>@m.Title</option>
             }
         </datalist>
+    </div>*@
+    <div id="dropDownListRooms" data-url="@Url.Action("_ListNameRooms", "Project")" class="form-group">
+        @Html.DropDownList("RoomID", null, htmlAttributes: new { @class = "form-control", @onchange = "changeListRoomsName()", @id = "listRoomsName" })
+        <button onclick="addRoom()" class = "btn btn-info">Добавить комнату</button><button onclick="    deletRoom()" class="btn btn-danger">Удалить комнату</button>
     </div>
 </div>
