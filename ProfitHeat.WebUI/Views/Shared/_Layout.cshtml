@@ -61,5 +61,17 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/MyJS");
     @RenderSection("scripts", required: false)
+
+    @*<script>
+            $(document).ready(function () {
+
+                $('#modelRadiator').change(
+                    $("#radiator").load(
+                        @Url.Action("_EditModelRadiator", "Project"),
+                        "modelRadiator" =  $(this).attr(data-model)
+                        ));
+
+            });
+        </script>*@
 </body>
 </html>
